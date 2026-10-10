@@ -55,7 +55,7 @@ def main() -> None:
         srcset = f'/assets/images/{base}-800.webp 800w, /assets/images/{base}-1600.webp 1600w'
         pattern = r'<img\b([^>]*?)\bsrc="' + re.escape(url) + r'"([^>]*)>'
         def rewrite(m):
-            attrs = (m.group(1) + m.group(2)).replace(" />", " ").replace("/>", "")
+            attrs = (m.group(1) + m.group(2)).strip().rstrip("/").strip()
             attrs = re.sub(r'\s+srcset="[^"]*"', "", attrs)
             attrs = re.sub(r'\s+sizes="[^"]*"', "", attrs)
             attrs = re.sub(r'\s+width="[^"]*"', "", attrs)
