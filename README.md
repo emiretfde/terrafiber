@@ -1,4 +1,4 @@
-# Terra Fiber GmbH — Redizajn v3 (DEMO)
+# Terra Fiber GmbH — Redizajn v5 (DEMO)
 
 Javno dostupna testna prezentacija: https://terrafiber.pages.dev/
 
@@ -8,6 +8,16 @@ Izvorni kod: https://github.com/emiretfde/terrafiber
 - `index.html` — staticki web demo (HTML, CSS, JS)
 - `_headers` — noindex i osnovna sigurnosna zaglavlja
 - `IZVORI.md` — izvorni javni podaci i ogranicenja
+
+
+## Promjene v5 (10.10.2026)
+
+- Umjesto pulsiranja svih elemenata, **jedan svjetlosni impuls** stvarno prati SVG krivinu kabla (`getPointAtLength`).
+- Tri fiksne tacke na kablu osvijetle se tacno kada ih impuls prode; njihove koordinate se ne animiraju.
+- Period: 6,9 s putovanja + 1,2 s pauze.
+- Uskladene izometrijske kuce i rasterecen natpis HAUSANSCHLUSS ostaju iz v4.
+- `prefers-reduced-motion` iskljucuje pokretnu animaciju.
+- Vanjske fotografije i dalje se privremeno ucitavaju sa starog `terrafiber.de`.
 
 ## Promjene v3
 - Suptilno CSS/SVG svjetlucanje optickog vlakna i cvorova na naslovnoj ilustraciji
