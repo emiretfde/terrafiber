@@ -9,7 +9,7 @@
  if(!ctx)return;
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
  const pointer={x:.78,y:.43,targetX:.78,targetY:.43};
- let w=0,h=0,dpr=1,columns=0,rows=0,dots=[],last=0,elapsed=0,raf=0,visible=false,playing=false;
+ let w=0,h=0,dpr=1,columns=0,rows=0,dots=[],last=0,lastPaint=0,elapsed=0,raf=0,visible=false,playing=false;
  let resizeObserver=null,intersectionObserver=null;
  function random(i,j){const val=Math.sin(i*127.1+j*311.7+19.8)*43758.5453;return val-Math.floor(val)}
  function resize(){
@@ -96,7 +96,7 @@
  function frame(now){
   if(!playing)return;
   const delta=last?Math.min(now-last,72):0;last=now;elapsed+=delta;
-  if(delta===0||delta>=28)draw();
+  if(now-lastPaint>=32){draw();lastPaint=now;}
   raf=requestAnimationFrame(frame);
  }
  function update(){
