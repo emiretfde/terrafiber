@@ -1,21 +1,27 @@
-# Terra Fiber GmbH — Redizajn v2 (DEMO)
+# Terra Fiber GmbH — Redizajn v3 (DEMO)
 
-Testna staticka web prezentacija. Kod se cuva u ovom privatnom GitHub repozitorijumu, a nakon povezivanja sa Cloudflare Pages svaka izmjena na `main` pokrece novi deployment.
+Javno dostupna testna prezentacija: https://terrafiber.pages.dev/
+
+Izvorni kod: https://github.com/emiretfde/terrafiber
 
 ## Fajlovi
-- `index.html` — kompletna testna stranica (HTML, CSS, JS)
-- `_headers` — bezbjednosna i noindex zaglavlja za Cloudflare Pages
-- `IZVORI.md` — izvori i ogranicenja u vezi sa sadrzajem
+- `index.html` — staticki web demo (HTML, CSS, JS)
+- `_headers` — noindex i osnovna sigurnosna zaglavlja
+- `IZVORI.md` — izvorni javni podaci i ogranicenja
 
-## Postavljanje na Cloudflare Pages
-1. Workers & Pages > Create > Pages > Connect to Git.
-2. Autorizuj GitHub pristup repo-u `emiretfde/terrafiber`.
-3. Production branch: `main`; Framework preset: `None`; Build command: ostavi prazno; Output directory: `/` (korijen projekta; ako UI zahtijeva build output folder, koristi `.`).
-4. Deploy. Nakon povezivanja, izmjene na `main` izazivaju novi deploy.
+## Promjene v3
+- Suptilno CSS/SVG svjetlucanje optickog vlakna i cvorova na naslovnoj ilustraciji
+- Odrzava postavku `prefers-reduced-motion` za korisnike kojima animacija smeta
+- Prikaz javno dostupnih fotografija iz postojece Terra Fiber galerije u odjeljcima Unternehmen, Einblicke, Projekte
+- Fotografije se u ovoj fazi **ucitavaju sa terrafiber.de**; nijesu preuzete i smjestene u ovaj repozitorijum. Ako stari domen bude nedostupan, nece se prikazati; prije finalne verzije preuzeti originalne datoteke uz odobrenje firme, optimizovati i hostovati lokalno.
+- Fotografije u sekciji projekata nijesu potvrdene kao prikaz konkretnog Aßlar-Berghausen projekta.
 
-## Napomene
-- Ovo je DEMO, nije produkcioni sajt. Ne dirati `terrafiber.de` ili poslovni DNS.
-- Repo je privatan; Cloudflare preview URL je bez dodatne kontrole pristupa javno dostupan. `noindex` nije autentikacija.
-- Kontakt forma koristi `mailto:`; nema backend slanja.
-- Logo i grafike su privremene, a podaci i reference zahtijevaju odobrenje firme.
-- Za produkciju su potrebni stvarne fotografije, potvrde sadrzaja, zakonska revizija i funkcionalna forma.
+## Automatika
+Promjena u `main` grani automatski pokrece novi Cloudflare Pages deployment. Za ovaj HTML demo ne treba build komanda; output directory je `.`.
+
+## Vazno
+- Demo, nije odobrena korporativna publikacija; pravni tekstovi i detalji o partnerima/projektima cekaju potvrdu.
+- Repozitorijum je trenutno **javan (Public)**; nikad ovdje ne smjestati lozinke, privatne dokumente ili licne podatke zaposlenih.
+- `noindex` nije kontrola pristupa. Cloudflare preview adresa je javna.
+- Kontakt forma trenutno otvara korisnikovu e-mail aplikaciju (`mailto:`), nema backend-a.
+- Ne mijenjati postojeci domen `terrafiber.de` niti njegov DNS.
