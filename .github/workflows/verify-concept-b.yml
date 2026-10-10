@@ -37,5 +37,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/screenshots/terraFIBER-conceptB-desktop.png docs/screenshots/terraFIBER-conceptB-mobile.png
           git diff --cached --quiet || git commit -m "Add Konzept B desktop and mobile previews"
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main
           git push
