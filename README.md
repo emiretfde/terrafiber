@@ -1,5 +1,26 @@
 # terraFIBER — Redesign-Studie · Konzept 09
 
+## Zwei Homepage-Varianten: Konzept A / Konzept B (11.10.2026)
+
+**Stabile Sicherung:** Git-Branch `stable-v9-de-nl-en` (unveränderter Ausgangszustand mit DE, EN und NL, WebP-Fotos und FTTH-Kartenhero).
+
+**Konzept A — klassische FTTH-Karte (Standard):**
+- DE: `/`
+- EN: `/en/`
+- NL: `/nl/`
+
+**Konzept B — immersive Netzgrafik nach dem Prinzip der GeoExpert-Startseite:**
+- DE: `/concept-b/`
+- EN: `/concept-b/en/`
+- NL: `/concept-b/nl/`
+
+Eine kleine, dreisprachige **Konzept A / Konzept B**-Leiste oberhalb des Bürgerservice schaltet zwischen den Designs. Die Wahl bleibt bei Sprachwechsel erhalten; die darunter liegenden Leistungs-, Projekt-, Bürgerservice-, Kontakt- und Karrierebereiche sind in beiden Konzepten identisch.
+
+Die neue Hero-Animation wurde unabhängig umgesetzt (Canvas2D-Punktfeld, ruhige Konturlinien, diskretes FTTH-Signal und leichte Mausreaktion). Keine GeoExpert-Assets oder fremden Skripte wurden übernommen. `assets/concept-b.css` / `assets/concept-b.js`; bei Reduced Motion bleibt eine statische Grafik sichtbar und außerhalb des Viewports bzw. im Hintergrund wird die Animation pausiert. `noindex` ist weiterhin aktiv.
+
+Browser-Test: 1440px und 375px, alle drei Sprachen, A/B-Wechsel, Canvas sichtbar, keine horizontale Überbreite. Screenshots unter `docs/screenshots/terraFIBER-conceptB-{desktop,mobile}.png`.
+
+
 Javno dostupna testna prezentacija: https://terrafiber.pages.dev/
 
 Izvorni kod: https://github.com/emiretfde/terrafiber
