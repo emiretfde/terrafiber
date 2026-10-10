@@ -1,0 +1,32 @@
+name: Inspect GeoExpert homepage inspiration
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inspect-geoexpert.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Capture reference homepage
+        run: node .github/qa/inspect-geoexpert.cjs
+      - name: Record reference screenshots for comparison
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/references/geoexpert-report.json docs/references/geoexpert-home-desktop.png docs/references/geoexpert-home-mobile.png
+          git diff --cached --quiet || git commit -m "Record GeoExpert visual reference for alternative hero"
+          git pull --rebase origin main
+          git push
