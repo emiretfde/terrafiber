@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<meta name="terra-preview-build" content="v3-reconnect-2026-10-10">
+<meta name="terra-preview-build" content="v4-hero-refinement-2026-10-10">
 <meta name="theme-color" content="#061329">
 <meta name="description" content="Konzeptvorschau: Terra Fiber GmbH – Planung, Tiefbau, technische Projektleitung und Installation von Glasfaserinfrastruktur.">
-<title>Terra Fiber — Website-Redesign · Konzept 02</title>
+<title>Terra Fiber — Website-Redesign · Konzept 04</title>
 <style>
 :root{--bg:#07152b;--bg2:#0d2546;--slate:#657481;--ink:#18283e;--accent:#13a5f3;--mint:#b7e9ff;--paper:#f5f8fc;--line:#dbe7f2;--max:1192px;--shadow:0 26px 65px rgba(13,38,38,.1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}svg{display:block}::selection{background:var(--accent);color:#0b1a22}:focus-visible{outline:3px solid #0f83d8;outline-offset:3px}.wrap{width:min(calc(100% - 64px),var(--max));margin-inline:auto}.smallcaps{font-size:12px;text-transform:uppercase;letter-spacing:.19em;font-weight:800}.eyebrow{display:flex;align-items:center;gap:10px;color:#406680}.eyebrow::before{content:"";height:7px;width:7px;background:#5498bc;border-radius:50%}.section{padding:110px 0}.section-title{font-size:clamp(35px,5vw,62px);line-height:1.09;letter-spacing:-.058em;font-weight:750;margin:16px 0 21px}.muted{color:#667682}.light-muted{color:#a8bdc7}.section-intro{font-size:18px;max-width:620px;color:#697780;line-height:1.7}.pill{display:inline-flex;align-items:center;gap:10px;border-radius:100px;padding:8px 14px;font-weight:700;letter-spacing:.09em;font-size:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:53px;padding:0 24px;border-radius:8px;font-size:14px;font-weight:760;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--accent);color:#0e1920}.btn-primary:hover{background:#9ddbfa}.btn-outline{border-color:#4d6686;color:white;background:transparent}.btn-outline:hover{border-color:white}.btn-dark{background:#13253c;color:white}.btn-dark:hover{background:#1c3555}.btn svg{width:17px;height:17px}
@@ -90,6 +90,23 @@ body{color:var(--ink)}
 @media (max-width: 640px){.gallery-grid{grid-template-columns:1fr}.gallery-card.large,.gallery-card.medium,.gallery-card.small{grid-column:span 1;min-height:220px}.photo-frame{min-height:300px}}
 
 @media(prefers-reduced-motion:reduce){.diagram .fiber-halo,.diagram .fiber-core,.diagram .fiber-highlights,.diagram .signal-link,.diagram .pulse-node,.diagram .signal-dot{animation:none!important}}
+
+/* V4 — ruhigeres Engineering-Visual: fixed endpoints, restrained fiber effect. */
+.preview-bar{height:24px;background:#17365a;color:#aecce4;font-size:9px;letter-spacing:.14em}
+.diagram .fiber-halo{animation:fiberHaloV4 9s ease-in-out infinite;opacity:.12}
+.diagram .fiber-core{animation:none;filter:drop-shadow(0 0 2px rgba(84,201,255,.2))}
+.diagram .fiber-highlights{stroke-dasharray:2 100;opacity:.22;animation:fiberFlowV4 24s linear infinite}
+.diagram .pulse-node,.diagram .signal-dot{transform:none!important;transform-origin:unset;animation:nodeGlowV4 6s ease-in-out infinite}
+.diagram .signal-dot{animation-duration:7.5s}
+.diagram .network-links{animation:none}
+.art-side{width:157px;padding:13px 14px;right:18px;bottom:18px;border-radius:9px}
+.art-side span{font-size:9px;letter-spacing:.10em}
+.art-side strong{font-size:18px;margin-top:8px;line-height:1.12}
+.art-grid{opacity:.6}
+@keyframes fiberHaloV4{0%,100%{opacity:.09}50%{opacity:.17}}
+@keyframes fiberFlowV4{from{stroke-dashoffset:0}to{stroke-dashoffset:-102}}
+@keyframes nodeGlowV4{0%,100%{opacity:.85;filter:drop-shadow(0 0 1px rgba(95,203,255,.22))}50%{opacity:1;filter:drop-shadow(0 0 3px rgba(95,203,255,.42))}}
+@media(prefers-reduced-motion:reduce){.diagram .fiber-halo,.diagram .fiber-core,.diagram .fiber-highlights,.diagram .pulse-node,.diagram .signal-dot{animation:none!important}}
 </style>
 </head>
 <body>
@@ -110,21 +127,44 @@ body{color:var(--ink)}
     <div class="hero-foot"><span><i></i> PLANEN</span><span><i></i> BAUEN</span><span><i></i> AKTIVIEREN</span></div>
   </div>
   <div class="hero-art" aria-label="Abstrakte Illustration eines Glasfaserinfrastruktur-Netzes"><div class="art-canvas"><div class="art-grid"></div>
-    <svg class="diagram" viewBox="0 0 600 520" role="img" aria-label="Schematische Glasfasertrasse, Kabel und vernetzte Hausanschlüsse">
-      <defs><linearGradient id="road" x1="0" x2="1"><stop stop-color="#304054"/><stop offset="1" stop-color="#182b44"/></linearGradient><linearGradient id="cable" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#74d4ff"/><stop offset="1" stop-color="#0f91ed"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="7"/></filter></defs>
+    <svg class="diagram" viewBox="0 0 600 520" role="img" aria-label="Schematische Glasfasertrasse mit drei Hausanschlüssen und festen Netzpunkten">
+      <defs>
+        <linearGradient id="road" x1="0" x2="1"><stop stop-color="#304054"/><stop offset="1" stop-color="#182b44"/></linearGradient>
+        <linearGradient id="cable" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#74d4ff"/><stop offset="1" stop-color="#0f91ed"/></linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
       <path d="M-120 455 L380 115 L710 210 L210 560 Z" fill="url(#road)" stroke="#5b7c9f" stroke-opacity=".23"/>
       <path d="M-90 443 L380 141 L685 233" stroke="#202f42" stroke-width="50" fill="none"/>
       <path d="M-90 443 L380 141 L685 233" stroke="#9db7ca" stroke-width="1.5" stroke-dasharray="9 14" fill="none" opacity=".5"/>
-      <path class="fiber-halo" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="#46bcff" stroke-width="19" fill="none" opacity=".19" filter="url(#glow)"/>
-      <path class="fiber-core" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="url(#cable)" stroke-width="5" fill="none"/>
-      <path class="fiber-highlights" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="#c7f1ff" stroke-width="2.2" fill="none"/>
-      <g stroke="#98cff1" stroke-width="2.3" fill="none" opacity=".85"><path class="signal-link" d="M152 354 L130 240 L44 183"/><path class="signal-link" style="animation-delay:.45s" d="M279 257 L299 120 L359 88"/><path class="signal-link" style="animation-delay:.9s" d="M447 198 L501 127 L572 98"/><path class="signal-link" style="animation-delay:1.35s" d="M490 216 L570 340"/></g>
-      <g fill="#63c7ff" stroke="#15202d" stroke-width="8"><circle class="pulse-node" cx="152" cy="354" r="10"/><circle class="pulse-node" style="animation-delay:.35s" cx="279" cy="257" r="10"/><circle class="pulse-node" style="animation-delay:.7s" cx="447" cy="198" r="10"/><circle class="pulse-node" style="animation-delay:1.05s" cx="130" cy="240" r="7"/></g>
-      <g stroke="#97aec3" stroke-width="1.7" fill="#1f2f44"><path d="M11 145l42-25 45 22-44 26z"/><path d="M11 145v37l43 22v-36z"/><path d="M54 168l44-26v38l-44 24z"/><path d="M52 123v-19l25-14 25 14v16"/></g>
-      <g stroke="#97aec3" stroke-width="1.7" fill="#1f2f44"><path d="M333 63l32-18 35 18-34 20z"/><path d="M333 63v31l33 17V83z"/><path d="M366 83l34-20v32l-34 16z"/></g>
-      <g stroke="#afc7d7" stroke-width="1.7" fill="#253548"><path d="M545 85l24-14 27 14-26 15z"/><path d="M545 85v25l25 13v-23z"/><path d="M570 100l26-15v25l-26 13z"/></g>
-      <g fill="#54c9ff"><circle class="signal-dot" cx="44" cy="183" r="6"/><circle class="signal-dot" style="animation-delay:.4s" cx="359" cy="88" r="6"/><circle class="signal-dot" style="animation-delay:.8s" cx="572" cy="98" r="6"/><circle class="signal-dot" style="animation-delay:1.2s" cx="570" cy="340" r="6"/></g>
-      <g fill="#a5b8cb" font-size="10" font-family="Arial,sans-serif" letter-spacing="2"><text x="25" y="220">FTTH</text><text x="302" y="125">NETZ</text><text x="465" y="360">HAUSANSCHLUSS</text></g>
+      <path class="fiber-halo" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="#46bcff" stroke-width="15" fill="none" opacity=".12" filter="url(#glow)"/>
+      <path class="fiber-core" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="url(#cable)" stroke-width="4.5" fill="none"/>
+      <path class="fiber-highlights" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="#c7f1ff" stroke-width="1.5" fill="none"/>
+      <g class="network-links" stroke="#8dbede" stroke-width="2" fill="none" opacity=".72">
+        <path d="M152 343 L130 234 L54 168"/>
+        <path d="M279 264 L300 129 L369 90"/>
+        <path d="M447 202 L498 143 L569 109"/>
+        <path d="M482 215 L536 296"/>
+      </g>
+      <!-- House symbols share the same proportions and isometric perspective. -->
+      <g stroke="#acc9df" stroke-width="1.7" stroke-linejoin="round">
+        <g class="network-house"><path d="M44 112 L74 130 L44 148 L14 130Z" fill="#2b4662"/><path d="M14 130 L44 148 L44 191 L14 174Z" fill="#1c3049"/><path d="M44 148 L74 130 L74 174 L44 191Z" fill="#28425c"/></g>
+        <g class="network-house"><path d="M359 33 L389 51 L359 69 L329 51Z" fill="#2b4662"/><path d="M329 51 L359 69 L359 112 L329 95Z" fill="#1c3049"/><path d="M359 69 L389 51 L389 95 L359 112Z" fill="#28425c"/></g>
+        <g class="network-house"><path d="M559 52 L589 70 L559 88 L529 70Z" fill="#2b4662"/><path d="M529 70 L559 88 L559 131 L529 114Z" fill="#1c3049"/><path d="M559 88 L589 70 L589 114 L559 131Z" fill="#28425c"/></g>
+      </g>
+      <g class="network-main-nodes" fill="#71cfff" stroke="#112842" stroke-width="7">
+        <circle class="pulse-node" cx="152" cy="343" r="8"/>
+        <circle class="pulse-node" style="animation-delay:1.1s" cx="279" cy="264" r="8"/>
+        <circle class="pulse-node" style="animation-delay:2.2s" cx="447" cy="202" r="8"/>
+      </g>
+      <g class="network-terminals" fill="#83d6fc">
+        <circle class="signal-dot" cx="54" cy="168" r="5"/>
+        <circle class="signal-dot" style="animation-delay:1.1s" cx="369" cy="90" r="5"/>
+        <circle class="signal-dot" style="animation-delay:2.2s" cx="569" cy="109" r="5"/>
+        <circle class="signal-dot" style="animation-delay:3.3s" cx="536" cy="296" r="4"/>
+      </g>
+      <g fill="#a9bdd0" font-size="10" font-family="Arial,sans-serif" letter-spacing="2">
+        <text x="22" y="225">FTTH</text><text x="300" y="143">NETZ</text><text x="411" y="323">HAUSANSCHLUSS</text>
+      </g>
     </svg>
     <div class="art-badge"><strong>PLANEN · BAUEN · AKTIVIEREN</strong><span>Terra Fiber · Deutschland</span></div>
     <div class="art-side"><span>Unser Ansatz</span><strong>Planen.<br>Bauen.<br>Aktivieren.</strong></div><div class="hero-caption">Illustrative Darstellung · Konzept</div>
@@ -149,7 +189,7 @@ body{color:var(--ink)}
 <section class="section contact" id="kontakt" aria-labelledby="contact-title"><div class="wrap contact-flex"><div><span class="eyebrow smallcaps">Kontakt</span><h2 class="section-title" id="contact-title">Lassen Sie uns<br>etwas bewegen.</h2><p class="section-intro">Sie planen ein Glasfaserprojekt oder möchten mit Terra Fiber zusammenarbeiten? Wir freuen uns auf Ihre Anfrage.</p><div class="contact-info"><div class="contact-line"><div class="small-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></div><div><strong>E-Mail</strong><a href="mailto:info@terrafiber.de"><span>info@terrafiber.de</span></a></div></div><div class="contact-line"><div class="small-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3h4l1 5-3 2a15 15 0 0 0 5 5l2-3 5 1v4c0 2-2 4-4 4A15 15 0 0 1 3 7c0-2 2-4 4-4z"/></svg></div><div><strong>Telefon</strong><a href="tel:+4959738270070"><span>+49 5973 8270070</span></a></div></div><div class="contact-line"><div class="small-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><strong>Anschrift</strong><span>Erich-Kästner-Straße 29<br>48485 Neuenkirchen, Deutschland</span></div></div></div></div>
 <form class="contact-form" id="mailForm"><h3>Ihre Projektanfrage</h3><p>Demonstration: Ein Klick bereitet eine E-Mail in Ihrem lokalen E-Mail-Programm vor.</p><div class="form-grid"><div class="form-field"><label for="name">Ihr Name *</label><input id="name" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></div><div class="form-field"><label for="company">Unternehmen</label><input id="company" name="company" autocomplete="organization" placeholder="Firmenname"></div></div><div class="form-field"><label for="email">Geschäftliche E-Mail *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="name@unternehmen.de"></div><div class="form-field"><label for="message">Wie können wir helfen? *</label><textarea id="message" name="message" required rows="5" placeholder="Beschreiben Sie Ihr Anliegen ..."></textarea></div><button class="btn btn-dark" type="submit">E-Mail-Anfrage vorbereiten ↗</button><div class="form-note">Die Demo speichert und übermittelt keine Formulardaten an einen Server. Erst Ihr E-Mail-Programm öffnet eine vorbereitete Nachricht; sie wird nicht automatisch versendet. Vor einem Produktivbetrieb ist ein datenschutzkonformes Formular-Backend nötig.</div></form></div></section>
 </main>
-<footer><div class="wrap"><div class="footer-top"><a class="logo" href="#start"><svg class="fiber-symbol" viewBox="0 0 34 34" width="31" height="31" aria-hidden="true" fill="none"><path d="M3 28c9-1 10-10 15-17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M9 30c9-3 12-12 16-21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M15 30c8-4 13-12 16-25" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>terra<span class="logo-emphasis">FIBER</span></a><div class="footer-nav"><a href="#unternehmen">Unternehmen</a><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#karriere">Karriere</a><a href="#kontakt">Kontakt</a><a href="https://terrafiber.de/impressum/" target="_blank" rel="noopener noreferrer">Bestehendes Impressum ↗</a></div></div><div class="footer-bottom"><div>© 2026 Terra Fiber GmbH · Nicht freigegebene Designstudie · Demo v3</div><a class="to-top" href="#start">Nach oben ↑</a></div></div></footer>
+<footer><div class="wrap"><div class="footer-top"><a class="logo" href="#start"><svg class="fiber-symbol" viewBox="0 0 34 34" width="31" height="31" aria-hidden="true" fill="none"><path d="M3 28c9-1 10-10 15-17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M9 30c9-3 12-12 16-21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M15 30c8-4 13-12 16-25" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>terra<span class="logo-emphasis">FIBER</span></a><div class="footer-nav"><a href="#unternehmen">Unternehmen</a><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#karriere">Karriere</a><a href="#kontakt">Kontakt</a><a href="https://terrafiber.de/impressum/" target="_blank" rel="noopener noreferrer">Bestehendes Impressum ↗</a></div></div><div class="footer-bottom"><div>© 2026 Terra Fiber GmbH · Nicht freigegebene Designstudie · Demo v4</div><a class="to-top" href="#start">Nach oben ↑</a></div></div></footer>
 <script>
 (function(){'use strict';var btn=document.getElementById('menuBtn');var nav=document.getElementById('navlinks');btn.addEventListener('click',function(){var expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));btn.setAttribute('aria-label',expanded?'Menü öffnen':'Menü schließen');nav.classList.toggle('open',!expanded)});nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Menü öffnen')})});document.getElementById('mailForm').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('name').value.trim();var c=document.getElementById('company').value.trim();var m=document.getElementById('message').value.trim();var em=document.getElementById('email').value.trim();if(!n||!em||!m)return;var subject='Projektanfrage über Website-Konzept – '+(c||n);var body='Name: '+n+'\nUnternehmen: '+(c||'-')+'\nE-Mail: '+em+'\n\nNachricht:\n'+m;window.location.href='mailto:info@terrafiber.de?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)})})();
 </script>
