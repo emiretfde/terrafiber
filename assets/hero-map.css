@@ -4,6 +4,7 @@
 .hero-art .map-streets,.hero-art .map-footprints{color:rgba(255,255,255,.20)}
 .hero-art .map-branches{opacity:.63}
 .hero-art .map-house{color:rgba(255,255,255,.24);transition:color 1.2s ease}
+.hero-art .map-house path{stroke:currentColor}
 .hero-art .map-house.is-active{color:rgba(74,155,234,.80)}
 .hero-art .neighborhood-map.is-resetting .map-house{transition-duration:2s}
 .hero-art .map-node-core{animation:map-breathe 4s ease-in-out infinite;opacity:.8}
