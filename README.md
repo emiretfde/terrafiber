@@ -1,4 +1,4 @@
-# Terra Fiber GmbH — Redizajn v7 (DEMO)
+# terraFIBER — Redesign-Studie · Konzept 08
 
 Javno dostupna testna prezentacija: https://terrafiber.pages.dev/
 
@@ -9,6 +9,20 @@ Izvorni kod: https://github.com/emiretfde/terrafiber
 - `_headers` — noindex i osnovna sigurnosna zaglavlja
 - `IZVORI.md` — izvorni javni podaci i ogranicenja
 
+
+## Konzept 08 (10.10.2026)
+
+- Bürgerservice-Leiste: +49 5973 8270070, Servicezeit Mo–Fr 08:00–17:00, DE / NL / EN (Übersetzungen fehlen noch).
+- Bürgerservice-Sektion mit vier Aktionen, drei FAQ, Netzbetreiber-Hinweis.
+- Fünf Ausbauschritte direkt nach dem Hero; vier Unternehmenskennzahlen inkl. [X] Hausanschlüsse.
+- SVG-Animation aus v7 **unverändert**; nur mobile Overlay-Abstände und Länderzeile überarbeitet.
+- Über-uns-Foto als `img` mit deutscher Alt-Beschreibung; Galerie 2+3 ohne leere Rasterspalte.
+- Qualität: Präqualifikation, Arbeitsschutz, Dokumentation, eigene Technik; inseyet-Referenz.
+- Karriere: beide vorhandenen Stellenanzeigen, Benefit-Platzhalter, 2-Minuten-Bewerbung-CTA.
+- Echte HTML-Formularfelder statt `mailto`, aber **Versand deaktiviert bis zum sicheren Backend**. Keine personenbezogenen Formulardaten werden derzeit übermittelt.
+- Footer mit Adresse, Telefon, Öffnungszeiten, Impressum/Datenschutz und Cookie-Einstellungen.
+- **Bilder noch nicht lokal.** Originale von `terrafiber.de` können hier nicht heruntergeladen werden. Das vorbereitete Skript `scripts/prepare_images.py` erzeugt nach Bereitstellung die verlangten WebP 800/1600 und `srcset`. Siehe `BILDER_IMPORT_V8.md`.
+- Weiter offene Freigaben: [X] Hausanschlüsse, [Nachweise], [Leistungsumfang bestätigen], [Anzahl Kolonnen, Maschinen], [Vorteil 1–3], Firmenprofil PDF, Hinweisgebersystem-URL, NL/EN und Formular-Backend mit Datenschutzerklärung.
 
 ## Promjene v7 (10.10.2026)
 
