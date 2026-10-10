@@ -1,0 +1,39 @@
+name: Verify Dutch page and capture screenshots
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-nl.yml'
+      - '.github/qa/verify-nl.cjs'
+      - 'nl/index.html'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve local site
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/terra-nl.log 2>&1 &
+          sleep 2
+          curl -fsS http://127.0.0.1:8123/nl/ >/dev/null
+      - name: Browser validation and screenshots
+        run: node .github/qa/verify-nl.cjs
+      - name: Save screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/screenshots/terraFIBER-nl-desktop.png docs/screenshots/terraFIBER-nl-mobile.png
+          git diff --cached --quiet || git commit -m "Capture tested Dutch desktop and mobile screenshots"
+          git pull --rebase origin main
+          git push
