@@ -1,0 +1,523 @@
+{
+  "title": "GeoExpert | Geodetske usluge u Podgorici",
+  "meta": "GeoExpert, Podgorica: legalizacija objekata, dioba parcela, geodetske podloge i upis u katastar. Više od 13 godina iskustva na terenu širom Crne Gore.",
+  "url": "https://geoexpert-aes.pages.dev/",
+  "width": 1440,
+  "headings": [
+    "Svaka granica, izmjerena i upisana.",
+    "Geodezija je obično samo jedan korak u većem poslu.",
+    "Čime se bavimo",
+    "Od terena do katastra",
+    "Kako radimo sa klijentima",
+    "Povjerili su nam se",
+    "Imate parcelu ili objekat koji treba urediti?"
+  ],
+  "paragraphs": [
+    "Geodetske i katastarske usluge, Podgorica",
+    "GeoExpert iz Podgorice više od 13 godina radi legalizacije, diobe parcela, geodetske podloge i upise u katastar. Vodimo vas od prvog mjerenja do rješenja katastra.",
+    "Gradnja, legalizacija, prodaja ili podjela imovine. Zato ne predajemo samo mjerenje, već vas vodimo kroz cijeli postupak i objašnjavamo svaki korak.",
+    "Više o nama",
+    "Devet usluga u tri oblasti. Za svaku pripremamo kompletnu dokumentaciju i pratimo predmet u katastru.",
+    "Svaki predmet prolazi iste četiri stanice. Na planu je primjer: dioba parcele 1853 na dvije nove parcele.",
+    "Utvrđujemo šta vam je potrebno i šta već imate.",
+    "Mjerimo i obilježavamo parcelu ili objekat.",
+    "Pripremamo dokumentaciju u skladu sa propisima.",
+    "Pratimo postupak do upisa u evidenciju.",
+    "Opišite nam situaciju. Javićemo se i reći koja dokumentacija je potrebna."
+  ],
+  "visible": [
+    {
+      "tag": "A",
+      "cls": "skip",
+      "id": "",
+      "text": "Pređi na sadržaj",
+      "xywh": [
+        -9999,
+        0,
+        122,
+        28
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "absolute"
+    },
+    {
+      "tag": "HEADER",
+      "cls": "zaglavlje",
+      "id": "",
+      "text": "GeoExpert\nMeni\n\nUsluge\nO nama\nKontakt\nMEENDETRRU\n+382 68 007 108",
+      "xywh": [
+        0,
+        0,
+        1440,
+        77
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "fixed"
+    },
+    {
+      "tag": "A",
+      "cls": "znak",
+      "id": "",
+      "text": "GeoExpert",
+      "xywh": [
+        104,
+        23,
+        153,
+        31
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "svg",
+      "cls": "",
+      "id": "",
+      "text": "",
+      "xywh": [
+        104,
+        24,
+        28,
+        28
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "Usluge",
+      "xywh": [
+        719,
+        26,
+        46,
+        24
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "O nama",
+      "xywh": [
+        799,
+        26,
+        52,
+        24
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "Kontakt",
+      "xywh": [
+        885,
+        26,
+        50,
+        24
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "EN",
+      "xywh": [
+        1010,
+        25,
+        36,
+        25
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "DE",
+      "xywh": [
+        1047,
+        25,
+        36,
+        25
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "TR",
+      "xywh": [
+        1085,
+        25,
+        35,
+        25
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "id": "",
+      "text": "RU",
+      "xywh": [
+        1121,
+        25,
+        37,
+        25
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "tel",
+      "id": "",
+      "text": "+382 68 007 108",
+      "xywh": [
+        1192,
+        16,
+        144,
+        44
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "MAIN",
+      "cls": "",
+      "id": "sadrzaj",
+      "text": "Geodetske i katastarske usluge, Podgorica\n\nTačka0439\nY6 603 335,74\nX4 700 347,41",
+      "xywh": [
+        0,
+        0,
+        1440,
+        6649
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "hero",
+      "id": "",
+      "text": "Geodetske i katastarske usluge, Podgorica\n\nTačka0439\nY6 603 335,74\nX4 700 347,41",
+      "xywh": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "radial-gradient(120% 80% at 70% 40%, rgb(18, 34, 44) 0%, rgb(9, 17, 23) 62%)",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "relative"
+    },
+    {
+      "tag": "CANVAS",
+      "cls": "oblak",
+      "id": "",
+      "text": "",
+      "xywh": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "absolute"
+    },
+    {
+      "tag": "H1",
+      "cls": "",
+      "id": "hero-n",
+      "text": "Svaka granica, izmjerena i upisana.",
+      "xywh": [
+        104,
+        411,
+        696,
+        435
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "dugme",
+      "id": "",
+      "text": "Zatražite ponudu",
+      "xywh": [
+        872,
+        792,
+        194,
+        54
+      ],
+      "background": "rgb(236, 232, 223)",
+      "backgroundImage": "none",
+      "color": "rgb(9, 17, 23)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "static"
+    },
+    {
+      "tag": "A",
+      "cls": "veza broj",
+      "id": "",
+      "text": "+382 68 007 108",
+      "xywh": [
+        1094,
+        803,
+        133,
+        32
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "relative"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "sekcija",
+      "id": "",
+      "text": "Geodezija je obično samo jedan korak u većem poslu.\nGradnja, legalizacija, proda",
+      "xywh": [
+        0,
+        900,
+        1440,
+        856
+      ],
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "color": "rgb(236, 232, 223)",
+      "font": "Archivo, \"Roboto Flex\", \"Helvetica Neue\", Arial, sans-serif",
+      "position": "relative"
+    }
+  ],
+  "animated": [
+    {
+      "tag": "P",
+      "cl": "oznaka",
+      "animation": "uzlaz"
+    },
+    {
+      "tag": "DL",
+      "cl": "ocitavanje",
+      "animation": "uzlaz"
+    },
+    {
+      "tag": "H1",
+      "cl": "",
+      "animation": "uzlaz"
+    },
+    {
+      "tag": "DIV",
+      "cl": "desno",
+      "animation": "uzlaz"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "polygon",
+      "cl": "",
+      "animation": "crtaj"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "line",
+      "cl": "",
+      "animation": "crtaj-d"
+    },
+    {
+      "tag": "g",
+      "cl": "",
+      "animation": "pojavi"
+    },
+    {
+      "tag": "text",
+      "cl": "",
+      "animation": "pojavi"
+    }
+  ],
+  "canvas": [
+    {
+      "type": "CANVAS",
+      "id": "",
+      "cl": "oblak"
+    },
+    {
+      "type": "CANVAS",
+      "id": "",
+      "cl": "izohipse"
+    }
+  ],
+  "scriptSrc": [
+    "[inline]",
+    "[inline]",
+    "https://geoexpert-aes.pages.dev/assets/vendor/three.min.js",
+    "https://geoexpert-aes.pages.dev/assets/site.js?v=adee7efd"
+  ]
+}
