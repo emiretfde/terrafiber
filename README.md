@@ -20,6 +20,18 @@ Die sieben bereits lokal vorhandenen terraFIBER-Fotos sind ohne Wiederholungen a
 - Bildmotive, Alt-Texte, Zuschnitte und Bildunterschriften sind auf DE und EN synchronisiert.
 - Hero-Animation, Formular und andere Abschnitte wurden nicht verändert.
 
+## Nederlandse versie / Dutch version (11.10.2026)
+
+- Nederlandse site: https://terrafiber.pages.dev/nl/ (`nl/index.html`).
+- De taalkiezer schakelt tussen DE, NL en EN op alle drie pagina's.
+- De volledige inhoud is vertaald: diensten, FTTH-projecten, bewonersservice, vacatures, FAQ en contactformulier.
+- Het huidige ontwerp, de zeven lokale WebP-foto's, de SVG-animatie en de configuratie voor `noindex` zijn behouden.
+- Gegevens, referenties en ontbrekende informatie blijven inhoudelijk gelijk aan de DE-/EN-versies.
+- De formulierverzending blijft uitgeschakeld totdat een veilige backend beschikbaar is.
+- Juridische links verwijzen vooralsnog naar de Duitstalige bedrijfswebsite; tekst en vertaling moeten vóór productie worden goedgekeurd.
+- Desktop (1440 px) en mobiel (375 px) gecontroleerd in Chromium: geen horizontaal scrollen, alle foto's laden en geen JavaScript-fouten.
+- Test-screenshots: `docs/screenshots/terraFIBER-nl-desktop.png` en `docs/screenshots/terraFIBER-nl-mobile.png`.
+
 ## English version (11.10.2026)
 
 - German homepage: https://terrafiber.pages.dev/ (`index.html`).
