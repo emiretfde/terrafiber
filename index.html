@@ -273,10 +273,10 @@ body{color:var(--ink)}
     mainDots.push(makeDot(mainLayer,i));
     for(var b=0;b<3;b++)branchDots[b].push(makeDot(branchLayer,i+b));
   }
-  function place(element,path,distance,visible){
+  function place(element,path,distance,visible,pathLength){
     element.setAttribute('opacity',visible?'1':'0');
     if(!visible)return;
-    var pt=path.getPointAtLength(Math.max(0,Math.min(path.getTotalLength(),distance)));
+    var pt=path.getPointAtLength(Math.max(0,Math.min(pathLength,distance)));
     element.setAttribute('transform','translate('+pt.x.toFixed(2)+' '+pt.y.toFixed(2)+')');
   }
   function animate(now){
@@ -286,7 +286,7 @@ body{color:var(--ink)}
     for(var j=0;j<particleCount;j++){
       var traveled=mod(elapsed-j*spacing,cycleLength);
       trunkPositions.push(traveled);
-      place(mainDots[j],route,traveled,traveled<=mainLength);
+      place(mainDots[j],route,traveled,traveled<=mainLength,mainLength);
     }
     for(var branchIndex=0;branchIndex<3;branchIndex++){
       var arrivalGlow=0,nearNodeGlow=0;
@@ -295,13 +295,13 @@ body{color:var(--ink)}
       for(var p=0;p<particleCount;p++){
         var trunkDist=trunkPositions[p];
         var branchDist=mod(elapsed-p*spacing-junction,cycleLength);
-        place(branchDots[branchIndex][p],branches[branchIndex],branchDist,branchDist<=branchLength);
+        place(branchDots[branchIndex][p],branches[branchIndex],branchDist,branchDist<=branchLength,branchLength);
         var nodeDelta=Math.abs(trunkDist-junction);
         nearNodeGlow=Math.max(nearNodeGlow,Math.max(0,1-nodeDelta/22));
         /* Flash starts exactly when a small dot arrives at the house endpoint.
-           Decay takes about 0.65 seconds, without moving the socket. */
-        if(branchDist>=branchLength&&branchDist<branchLength+70){
-          arrivalGlow=Math.max(arrivalGlow,1-(branchDist-branchLength)/70);
+           Decay takes about 0.36 seconds, without moving the socket. */
+        if(branchDist>=branchLength&&branchDist<branchLength+38){
+          arrivalGlow=Math.max(arrivalGlow,1-(branchDist-branchLength)/38);
         }
       }
       nodeHalos[branchIndex].setAttribute('opacity',(nearNodeGlow*.52).toFixed(3));
