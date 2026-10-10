@@ -218,3 +218,7 @@ footer .footer-bottom{border-top:1px solid #334358;color:#aab9cb}
 .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.services-grid .service,.citizen-cards a,.btn{transition:none!important}}
+
+/* Language navigation: accessible links for published translations. */
+.language-switch a{display:inline-block;padding:3px 5px;font-size:11px;font-weight:600;line-height:1.55;color:#0759a5;text-decoration:none}
+.language-switch a:hover{text-decoration:underline}
