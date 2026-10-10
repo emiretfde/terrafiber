@@ -15,7 +15,18 @@ const fs = require('node:fs');
     page.on('pageerror', e => errors.push(String(e)));
     await page.goto('http://127.0.0.1:8123/', { waitUntil: 'domcontentloaded', timeout: 30000 });
     await page.evaluate(() => document.fonts.ready);
-    await page.waitForTimeout(2400);
+    // Eagerly load photos before the full-page capture, including off-screen mobile images.
+    await page.evaluate(() => {
+      for (const img of document.querySelectorAll('img[loading="lazy"]')) img.loading = 'eager';
+    });
+    await Promise.race([
+      page.evaluate(() => Promise.all([...document.images].map(img => img.complete ? null : new Promise(resolve => {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      })))),
+      page.waitForTimeout(5500)
+    ]);
+    await page.waitForTimeout(500);
     const metrics = await page.evaluate(() => ({
       innerWidth: innerWidth, docWidth: document.documentElement.scrollWidth,
       bodyWidth: document.body.scrollWidth,
