@@ -1,0 +1,44 @@
+name: Migrate terraFIBER gallery photos to local WebP
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-photos.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare Pillow
+        run: python -m pip install "Pillow>=11,<13"
+      - name: Retrieve seven gallery originals and convert to WebP
+        run: python scripts/prepare_images.py --download
+      - name: Verify localized pages and responsive WebP assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for file in ('index.html','en/index.html'):
+              h=Path(file).read_text('utf-8')
+              assert h.count('srcset="/assets/images/') == 8, (file, h.count('srcset='))
+              assert 'https://terrafiber.de/wp-content/uploads/' not in h
+              assert 'class="art-canvas neighborhood-map"' in h
+              print(file, 'validated: 8 images, same hero map')
+          images=list(Path('assets/images').glob('*.webp'))
+          assert len(images) == 14, len(images)
+          print(len(images), 'WebP variants validated')
+          PY
+      - name: Commit optimized assets and both language pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html en/index.html assets/images/*.webp
+          git diff --cached --quiet || git commit -m "Serve approved Terra Fiber gallery photos locally as responsive WebP"
+          git pull --rebase origin main
+          git push
