@@ -10,6 +10,16 @@ Izvorni kod: https://github.com/emiretfde/terrafiber
 - `IZVORI.md` — izvorni javni podaci i ogranicenja
 
 
+## Fotoauswahl v9.1 (11.10.2026)
+
+Die sieben bereits lokal vorhandenen terraFIBER-Fotos sind ohne Wiederholungen auf jeder Sprachversion platziert:
+- Über terraFIBER: `AVA-00024-14` — zwei Mitarbeitende bei der Bauabstimmung
+- Breites Baustellenmotiv: `AVA-00131-69` — Wiederherstellung von Pflasterflächen
+- Galerie: `AVA-05532-215` (Radlader), `AVA-05573-235` (Netzverteiler), `AVA-05521-211` (Kabel-/Rohrtrommeln), `AVA-05398-164` (Pflasterarbeiten)
+- Referenzbereich: `AVA-05497-198` — Erdarbeiten, nicht Aßlar-Berghausen zugeordnet
+- Bildmotive, Alt-Texte, Zuschnitte und Bildunterschriften sind auf DE und EN synchronisiert.
+- Hero-Animation, Formular und andere Abschnitte wurden nicht verändert.
+
 ## English version (11.10.2026)
 
 - German homepage: https://terrafiber.pages.dev/ (`index.html`).
