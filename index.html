@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<meta name="terra-preview-build" content="v7-branch-particle-flow-2026-10-10">
+<meta name="terra-preview-build" content="v8-buergerservice-2026-10-10">
 <meta name="theme-color" content="#061329">
 <meta name="description" content="Konzeptvorschau: Terra Fiber GmbH – Planung, Tiefbau, technische Projektleitung und Installation von Glasfaserinfrastruktur.">
-<title>Terra Fiber — Website-Redesign · Konzept 07</title>
+<title>terraFIBER — Redesign-Studie · Konzept 08</title>
 <style>
 :root{--bg:#07152b;--bg2:#0d2546;--slate:#657481;--ink:#18283e;--accent:#13a5f3;--mint:#b7e9ff;--paper:#f5f8fc;--line:#dbe7f2;--max:1192px;--shadow:0 26px 65px rgba(13,38,38,.1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}svg{display:block}::selection{background:var(--accent);color:#0b1a22}:focus-visible{outline:3px solid #0f83d8;outline-offset:3px}.wrap{width:min(calc(100% - 64px),var(--max));margin-inline:auto}.smallcaps{font-size:12px;text-transform:uppercase;letter-spacing:.19em;font-weight:800}.eyebrow{display:flex;align-items:center;gap:10px;color:#406680}.eyebrow::before{content:"";height:7px;width:7px;background:#5498bc;border-radius:50%}.section{padding:110px 0}.section-title{font-size:clamp(35px,5vw,62px);line-height:1.09;letter-spacing:-.058em;font-weight:750;margin:16px 0 21px}.muted{color:#667682}.light-muted{color:#a8bdc7}.section-intro{font-size:18px;max-width:620px;color:#697780;line-height:1.7}.pill{display:inline-flex;align-items:center;gap:10px;border-radius:100px;padding:8px 14px;font-weight:700;letter-spacing:.09em;font-size:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:53px;padding:0 24px;border-radius:8px;font-size:14px;font-weight:760;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--accent);color:#0e1920}.btn-primary:hover{background:#9ddbfa}.btn-outline{border-color:#4d6686;color:white;background:transparent}.btn-outline:hover{border-color:white}.btn-dark{background:#13253c;color:white}.btn-dark:hover{background:#1c3555}.btn svg{width:17px;height:17px}
@@ -109,12 +109,22 @@ body{color:var(--ink)}
 </style>
 </head>
 <body>
-<div class="preview-bar">REDESIGN-STUDIE · TERRA FIBER · NICHT VERÖFFENTLICHT</div>
+<div class="preview-bar" role="note">REDESIGN-STUDIE · KONZEPT 08 · NICHT VERÖFFENTLICHT · INHALTE, RECHTSTEXTE, BILDER UND FORMULARVERSAND VOR FREIGABE PRÜFEN</div>
+<div class="citizen-topline" aria-label="Bürgerservice und Sprachauswahl">
+  <div class="wrap citizen-topline-inner">
+    <a class="citizen-topline-title" href="#buergerservice">Bürgerservice: Wir bauen in Ihrer Straße? <span aria-hidden="true">→</span></a>
+    <a class="citizen-topline-phone" href="tel:+4959738270070">+49 5973 8270070</a>
+    <span class="citizen-topline-hours">Mo–Fr 08:00–17:00 Uhr</span>
+    <div class="language-switch" role="group" aria-label="Sprachauswahl">
+      <span class="language-active" aria-current="true">DE</span><span aria-disabled="true" title="NL-Übersetzung folgt">NL</span><span aria-disabled="true" title="EN-Übersetzung folgt">EN</span>
+    </div>
+  </div>
+</div>
 <div class="top" id="start">
   <header class="wrap nav" aria-label="Hauptnavigation">
     <a class="logo" href="#start" aria-label="Terra Fiber Startseite"><svg class="fiber-symbol" viewBox="0 0 34 34" width="31" height="31" aria-hidden="true" fill="none"><path d="M3 28c9-1 10-10 15-17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M9 30c9-3 12-12 16-21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M15 30c8-4 13-12 16-25" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>terra<span class="logo-emphasis">FIBER</span></a>
     <button class="mobile-toggle" id="menuBtn" aria-label="Menü öffnen" aria-controls="navlinks" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-    <nav class="navlinks" id="navlinks" aria-label="Seitenbereiche"><a href="#unternehmen">Unternehmen</a><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#qualitaet">Qualität</a><a href="#karriere">Karriere</a><a href="#kontakt" class="btn btn-primary">Kontakt <span aria-hidden="true">↗</span></a></nav>
+    <nav class="navlinks" id="navlinks" aria-label="Seitenbereiche"><a href="#unternehmen">Unternehmen</a><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#qualitaet">Qualität</a><a href="#buergerservice">Bürgerservice</a><a href="#karriere">Karriere</a><a href="#kontakt" class="btn btn-primary">Kontakt <span aria-hidden="true">→</span></a></nav>
   </header>
 </div>
 <main>
@@ -123,7 +133,7 @@ body{color:var(--ink)}
     <h1 id="hero-title">Glasfaser, die <em>Zukunft verbindet.</em></h1>
     <p class="hero-desc">Von der Planung über den Tiefbau bis zum Hausanschluss: Terra Fiber realisiert Glasfaserinfrastruktur für leistungsfähige Netze und digitale Verbindungen.</p>
     <div class="hero-actions"><a class="btn btn-primary" href="#kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#leistungen">Leistungen entdecken <span aria-hidden="true">↓</span></a></div>
-    <div class="hero-foot"><span><i></i> PLANEN</span><span><i></i> BAUEN</span><span><i></i> AKTIVIEREN</span></div>
+    
   </div>
   <div class="hero-art" aria-label="Abstrakte Illustration eines Glasfaserinfrastruktur-Netzes"><div class="art-canvas"><div class="art-grid"></div>
     <svg class="diagram" viewBox="0 0 600 520" role="img" aria-label="Animierte Glasfasertrasse: kleine Lichtpunkte fließen vom Hauptkabel zu drei Hausanschlüssen">
@@ -179,11 +189,24 @@ body{color:var(--ink)}
         <text x="22" y="225">FTTH</text><text x="300" y="143">NETZ</text><text x="411" y="323">HAUSANSCHLUSS</text>
       </g>
     </svg>
-    <div class="art-badge"><strong>PLANEN · BAUEN · AKTIVIEREN</strong><span>Terra Fiber · Deutschland</span></div>
+    <div class="art-badge"><strong>PLANEN · BAUEN · AKTIVIEREN</strong><span>Deutschland · Belgien · Niederlande</span></div>
     <div class="art-side"><span>Unser Ansatz</span><strong>Planen.<br>Bauen.<br>Aktivieren.</strong></div><div class="hero-caption">Illustrative Darstellung · Konzept</div>
   </div></div>
 </div></section>
-<section class="metrics" aria-label="Unternehmensprofil"><div class="wrap metrics-inner"><div class="metric"><b>Seit 2023</b><p>Unternehmensentwicklung</p></div><div class="metric"><b>FTTH-Fokus</b><p>Glasfaserinfrastruktur</p></div><div class="metric"><b>Von A bis Z</b><p>Planung bis Hausanschluss</p></div></div></section>
+<section class="section rollout" id="ablauf" aria-labelledby="rollout-title"><div class="wrap">
+  <span class="eyebrow smallcaps">Der Ablauf</span><h2 class="section-title" id="rollout-title">So läuft Ihr Glasfaserausbau</h2>
+  <ol class="rollout-steps">
+    <li><b>01</b><span>Planung</span></li><li><b>02</b><span>Genehmigungen</span></li>
+    <li><b>03</b><span>Tiefbau</span></li><li><b>04</b><span>Einblasen und Spleißen</span></li>
+    <li><b>05</b><span>Aktivierung</span></li>
+  </ol>
+</div></section>
+<section class="metrics" aria-label="Unternehmensprofil"><div class="wrap metrics-inner">
+  <div class="metric"><b>rund 150</b><p>Mitarbeitende</p></div>
+  <div class="metric"><b>3</b><p>Länder · DE · BE · NL</p></div>
+  <div class="metric"><b>[X]</b><p>Hausanschlüsse</p></div>
+  <div class="metric"><b>seit 2023</b><p>Gründungsjahr</p></div>
+</div></section>
 <section class="section" id="leistungen" aria-labelledby="services-title"><div class="wrap"><div class="services-header"><div><span class="eyebrow smallcaps">Was wir leisten</span><h2 class="section-title" id="services-title">Alles für ein <br>starkes Netz.</h2></div><p class="section-intro">Vier ineinandergreifende Leistungsbereiche. Ein gemeinsames Ziel: strukturierter, effizienter und fachgerechter Glasfaserausbau.</p></div>
 <div class="services-grid">
 <article class="service"><span class="number">01 / PLANUNG</span><div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M6 37V9l12 6 12-6 12 6v28l-12-6-12 6zM18 15v28M30 9v28"/><path stroke-dasharray="3 3" d="M9 30l8-8 12 8 10-11"/></svg></div><h3>Planung &amp; Engineering</h3><p>Projektbezogene Konzeption, technische Detailplanung und Unterstützung bei Genehmigungen.</p><span class="arrow">↗</span></article>
@@ -191,14 +214,67 @@ body{color:var(--ink)}
 <article class="service"><span class="number">03 / TIEFBAU</span><div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M5 39h38M9 39V23h30v16M16 23l5-14h11l6 14M11 28h26M16 33h15M5 19h7M36 13h7"/><path d="M21 9l4 9"/></svg></div><h3>Tiefbau &amp; Trassen</h3><p>Herstellung der Trassen, Verlegung der Leerrohre und glasfasergerechte Bauausführung.</p><span class="arrow">↗</span></article>
 <article class="service"><span class="number">04 / ANSCHLUSS</span><div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M5 24l19-16 19 16M10 21v20h28V21M20 41V29h8v12"/><path d="M1 34h10M37 34h10" stroke-dasharray="3 3"/></svg></div><h3>Installation &amp; Hausanschlüsse</h3><p>Montage, Fusionsspleißarbeiten sowie Installation und Aktivierung von Glasfaseranschlüssen.</p><span class="arrow">↗</span></article>
 </div></div></section>
-<section class="section about" id="unternehmen" aria-labelledby="about-title"><div class="wrap about-inner"><div class="about-copy"><span class="smallcaps">Über Terra Fiber</span><h2 class="section-title" id="about-title">Aus Erfahrung.<br>Für die Zukunft.</h2><p class="section-intro">Die Terra Fiber GmbH mit Sitz in Neuenkirchen ist auf die Realisierung professioneller FTTH-Glasfaserinfrastrukturen spezialisiert.</p><p style="font-size:14px;line-height:1.9;color:#4a6280;margin-top:24px">Seit ihrer Gründung im Jahr 2023 ist die Entwicklung des Unternehmens eng mit dem Ausbau leistungsfähiger Glasfasernetze verbunden. Von der technischen Planung über den Tiefbau bis zur Aktivierung steht die Umsetzung anspruchsvoller Infrastrukturprojekte im Mittelpunkt.</p><ul class="checks" style="padding:0"><li>Fokus auf FTTH-Infrastrukturprojekte</li><li>Verzahnung von Planung, Bau und Installation</li><li>Praxisnahe Projektkoordination vor Ort</li></ul><a class="btn btn-dark" href="#kontakt">Mit uns sprechen <span aria-hidden="true">↗</span></a></div>
-<div class="about-visual photo-based"><div class="photo-frame" style="background-image:url('https://terrafiber.de/wp-content/uploads/2025/12/AVA-05573-235-scaled.jpg')" aria-label="Fotografie aus der bestehenden Terra-Fiber-Galerie"></div><div class="label-float"><strong>Fundament für digitale Zukunft</strong><span>Öffentlich zugängliches Bildmaterial des bestehenden Webauftritts · FTTH</span></div></div></div></section>
-<section class="section gallery-preview" id="einblicke" aria-labelledby="gallery-title"><div class="wrap"><span class="eyebrow smallcaps">Einblicke aus dem Bestand</span><h2 class="section-title" id="gallery-title">Mehr echte Bilder.<br>Mehr Vertrauen.</h2><p class="section-intro">Für diese Demo verwenden wir öffentlich zugängliche Fotografien aus dem bestehenden Terra-Fiber-Webauftritt. In der finalen Version sollten diese Bilder lokal übernommen, optimiert und kuratiert werden.</p><div class="gallery-grid"><figure class="gallery-card large"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05532-215-scaled.jpg" loading="lazy" decoding="async" alt="Foto aus der Terra-Fiber-Galerie"><figcaption class="gallery-caption">Baustelleneinsatz und Team vor Ort</figcaption></figure><figure class="gallery-card medium"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05521-211-scaled.jpg" loading="lazy" decoding="async" alt="Foto aus der bestehenden Terra-Fiber-Galerie"><figcaption class="gallery-caption">Tiefbau und Trassenherstellung</figcaption></figure><figure class="gallery-card small"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-00131-69-scaled.jpg" loading="lazy" decoding="async" alt="Bildmaterial des Terra-Fiber-Webauftritts"><figcaption class="gallery-caption">Verlegung und Anschluss</figcaption></figure><figure class="gallery-card small"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-00024-14-scaled.jpg" loading="lazy" decoding="async" alt="Weitere Aufnahme aus der Terra-Fiber-Galerie"><figcaption class="gallery-caption">Teamarbeit im Feld</figcaption></figure><figure class="gallery-card medium"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05398-164-scaled.jpg" loading="lazy" decoding="async" alt="Fotografie aus dem bestehenden Terra-Fiber-Webauftritt"><figcaption class="gallery-caption">Dokumentierter Projekteindruck</figcaption></figure></div></div></section>
+<section class="section about" id="unternehmen" aria-labelledby="about-title"><div class="wrap about-inner">
+  <div class="about-copy"><span class="smallcaps">Über terraFIBER</span>
+    <h2 class="section-title" id="about-title">Aus Erfahrung.<br>Für die Zukunft.</h2>
+    <p class="section-intro">terraFIBER mit Sitz in Neuenkirchen realisiert FTTH-Glasfaserinfrastruktur in Deutschland, Belgien und den Niederlanden.</p>
+    <p>Seit 2023 verbinden wir Planung, technische Projektleitung, Tiefbau und Hausanschlüsse. Rund 150 Mitarbeitende begleiten Ausbauprojekte vor Ort.</p>
+    <ul class="checks"><li>FTTH-Infrastruktur und Hausanschlüsse</li><li>Deutschland · Belgien · Niederlande</li><li>Projektkoordination und Dokumentation</li></ul>
+    <a class="btn btn-dark" href="#kontakt">Mit uns sprechen →</a>
+  </div>
+  <div class="about-visual photo-based">
+    <div class="photo-frame">
+      <img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05573-235-scaled.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="terraFIBER-Team beim Einsatz auf einer Glasfaserbaustelle"/>
+    </div>
+    <div class="label-float"><strong>Gemeinsam für moderne Netze</strong><span>terraFIBER · FTTH-Ausbau</span></div>
+  </div>
+</div></section>
+<section class="section gallery-preview" id="einblicke" aria-labelledby="gallery-title"><div class="wrap"><span class="eyebrow smallcaps">Einblicke</span><h2 class="section-title" id="gallery-title">Im Einsatz vor Ort.</h2><p class="section-intro">Einblicke in den Arbeitsalltag beim Glasfaserausbau.</p><div class="gallery-grid"><figure class="gallery-card large"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05532-215-scaled.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Aufnahme des terraFIBER-Teams bei einem Baustelleneinsatz"/><figcaption class="gallery-caption">Team auf der Baustelle</figcaption></figure><figure class="gallery-card "><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05521-211-scaled.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Arbeiten an einer Trasse für Glasfaserleitungen"/><figcaption class="gallery-caption">Tiefbau</figcaption></figure><figure class="gallery-card "><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-00131-69-scaled.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Arbeiten an einem Glasfaser-Hausanschluss"/><figcaption class="gallery-caption">Hausanschluss</figcaption></figure><figure class="gallery-card "><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-00024-14-scaled.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Montagearbeiten beim Glasfaserausbau"/><figcaption class="gallery-caption">Montage</figcaption></figure><figure class="gallery-card "><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05398-164-scaled.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Arbeitssituation bei einem terraFIBER-Ausbauprojekt"/><figcaption class="gallery-caption">Projekteinblicke</figcaption></figure></div></div></section>
 <section class="section project" id="projekte" aria-labelledby="project-title"><div class="wrap"><span class="eyebrow smallcaps">Projekte &amp; Referenzen</span><h2 class="section-title" id="project-title">Projekte, die <br>Verbindung schaffen.</h2><p class="section-intro">Ein Einblick in öffentlich dokumentierte Projektzusammenhänge. Weitere Referenzen ergänzen wir nach Abstimmung mit der Geschäftsführung.</p>
 <div class="project-flex"><div class="project-visual"><div class="project-photo-card"><img src="https://terrafiber.de/wp-content/uploads/2025/12/AVA-05497-198-scaled.jpg" loading="lazy" decoding="async" alt="Foto aus der Terra-Fiber-Galerie als Illustration"/><div class="project-badge">Fotomaterial von Terra Fiber</div></div></div>
 <div class="project-body"><span class="smallcaps">Aßlar-Berghausen · Deutschland</span><h3>Glasfaserausbau<br>Aßlar-Berghausen</h3><p>Fiber Experts Deutschland berichtete öffentlich über den Projektstart gemeinsam mit dem Nachunternehmer Terra Fiber GmbH und zwei eingesetzten Kolonnen. Die genannten Mengen beziehen sich auf das geplante Gesamtprojekt, nicht auf bereits ausgeführte Arbeiten von Terra Fiber.</p><div class="project-figures"><div><strong>50 km</strong><span>Geplanter Tiefbauumfang</span><em>Gesamtprojekt, nicht Ist-Wert</em></div><div><strong>5.500 HP</strong><span>Geplante Anschlusspunkte</span><em>Gesamtprojekt, nicht Ist-Wert</em></div></div><a class="source-link" href="https://de.linkedin.com/posts/fiber-experts-deutschland-gmbh_baustart-glasfaserausbau-asslar-activity-7359108634003312640-slkd" target="_blank" rel="noopener noreferrer">Öffentliche Projektmitteilung ansehen ↗</a></div></div><p class="disclaimer">Bild: Motiv aus der bestehenden Terra-Fiber-Galerie; kein gesicherter Bildbezug zum Projekt Aßlar-Berghausen. Konzeptvorschau: Bildauswahl und Projekttext vor Veröffentlichung prüfen.</p></div></section>
-<section class="section quality" id="qualitaet" aria-labelledby="quality-title"><div class="wrap quality-flex"><div><span class="eyebrow smallcaps">Qualität &amp; Technologie</span><h2 class="section-title" id="quality-title">Gute Arbeit wird<br>sichtbar gemacht.</h2><p class="section-intro">Nachvollziehbare Prozesse und strukturierte Dokumentation sind wichtige Bausteine eines professionellen Glasfaserausbaus.</p><div class="quality-list"><div class="quality-item"><div class="qi">01</div><div><strong>Digital unterstützte Dokumentation</strong><p>Terra Fiber wird in einer öffentlichen Referenz von inseyet als Anwender digitaler Baustellendokumentation genannt.</p></div></div><div class="quality-item"><div class="qi">02</div><div><strong>Koordination auf der Baustelle</strong><p>Technische Projektleitung, Abstimmung und Begleitung der Umsetzung vor Ort.</p></div></div><div class="quality-item"><div class="qi">03</div><div><strong>Von der Trasse zum Anschluss</strong><p>Aufeinander abgestimmte Leistungen bei Erdarbeiten, Installation und Aktivierung.</p></div></div></div></div><div class="quality-quote"><div class="decor" aria-hidden="true">“</div><blockquote>Digitale Infrastruktur beginnt mit präziser Arbeit vor Ort.</blockquote><div><b class="smallcaps" style="color:#3e586d">Unser Leitgedanke</b><p>Text- und Designvorschlag · kein offizielles Unternehmenszitat</p></div></div></div></section>
-<section class="section career" id="karriere" aria-labelledby="career-title"><div class="wrap career-content"><div><span class="smallcaps">Karriere bei Terra Fiber</span><h2 class="section-title" id="career-title">Gemeinsam die<br>Zukunft vernetzen.</h2><p>Technik, Teamarbeit und Projekte in Bewegung: Wir freuen uns über Menschen, die Interesse an der Arbeit rund um moderne Glasfaserinfrastrukturen haben.</p><p class="note">Aktuelle Stellenangebote und Bewerbungsbedingungen werden nach Bestätigung durch das Unternehmen ergänzt.</p></div><div class="career-actions"><a href="mailto:info@terrafiber.de?subject=Karriere%20bei%20Terra%20Fiber" class="btn btn-primary">Kontakt zur Karriere <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="section quality" id="qualitaet" aria-labelledby="quality-title"><div class="wrap">
+  <span class="eyebrow smallcaps">Qualität &amp; Technik</span><h2 class="section-title" id="quality-title">Qualität, die nachvollziehbar ist.</h2>
+  <p class="section-intro">Sicherheit, Struktur und Dokumentation gehören zum professionellen Glasfaserausbau.</p>
+  <div class="quality-cards">
+    <article><span class="quality-card-icon">01</span><h3>Präqualifikation</h3><p>[Nachweise]</p></article>
+    <article><span class="quality-card-icon">02</span><h3>Arbeitsschutz</h3><p>Sicherheit und abgestimmte Abläufe auf der Baustelle.</p></article>
+    <article><span class="quality-card-icon">03</span><h3>Dokumentation</h3><p>Foto-Doku, Messprotokolle und GIS-Daten [Leistungsumfang bestätigen].</p></article>
+    <article><span class="quality-card-icon">04</span><h3>Eigene Technik</h3><p>[Anzahl Kolonnen, Maschinen]</p></article>
+  </div>
+  <div class="quality-support"><p>Digitale Baustellendokumentation: terraFIBER ist als Referenz auf der Website von <a href="https://inseyet.de/" target="_blank" rel="noopener noreferrer">inseyet ↗</a> genannt.</p>
+    <span class="btn btn-dark btn-unavailable" aria-disabled="true" title="PDF-Firmenprofil wird nach Freigabe verlinkt">Firmenprofil (PDF) · [Datei folgt]</span>
+  </div>
+</div></section>
+<section class="section citizen-service" id="buergerservice" aria-labelledby="citizen-title"><div class="wrap">
+  <div class="citizen-lead"><div><span class="eyebrow smallcaps">Bürgerservice</span><h2 class="section-title" id="citizen-title">Wir bauen in Ihrer Straße?</h2>
+    <p class="section-intro">Fragen zu Terminen, Arbeiten an Ihrem Grundstück oder zur Baustelle? Sprechen Sie uns an.</p>
+    <a class="citizen-bigphone" href="tel:+4959738270070">+49 5973 8270070</a><p class="citizen-hours">Mo–Fr 08:00–17:00 Uhr</p></div>
+    <aside class="operator-note"><strong>Wichtig zu Ihrem Internetvertrag</strong><p>Den Internetvertrag schließen Sie mit dem zuständigen Netzbetreiber bzw. Internetanbieter ab – nicht mit dem ausführenden Bauunternehmen terraFIBER.</p></aside>
+  </div>
+  <div class="citizen-cards">
+    <a href="#kontakt" data-topic="Bürgerservice"><span>01</span><h3>Termin vereinbaren</h3><p>Wunschtermin und Adresse mitteilen.</p><b>Kontakt aufnehmen →</b></a>
+    <a href="#kontakt" data-topic="Bürgerservice"><span>02</span><h3>Problem an der Baustelle melden</h3><p>Anliegen und Baustellenadresse schildern.</p><b>Problem melden →</b></a>
+    <a href="#faq"><span>03</span><h3>Häufige Fragen</h3><p>Antworten zu Ablauf, Bau und Anschluss.</p><b>Fragen ansehen →</b></a>
+    <a href="#ablauf"><span>04</span><h3>Ablauf am Haus</h3><p>Die fünf Schritte bis zur Aktivierung.</p><b>Ablauf ansehen →</b></a>
+  </div>
+  <div class="citizen-faq" id="faq"><h3>Häufige Fragen</h3>
+    <details><summary>Mit wem schließe ich meinen Internetvertrag ab?</summary><p>Mit dem zuständigen Netzbetreiber beziehungsweise Internetanbieter. terraFIBER führt Bau- und Installationsarbeiten aus.</p></details>
+    <details><summary>Wie vereinbare ich einen Termin für Arbeiten am Haus?</summary><p>Rufen Sie uns während der Servicezeiten an oder beschreiben Sie Ihr Anliegen über den Kontaktbereich.</p></details>
+    <details><summary>Wohin melde ich Probleme an einer Baustelle?</summary><p>Wenden Sie sich an unseren Bürgerservice und nennen Sie möglichst die Straße, Hausnummer und Art des Problems.</p></details>
+  </div>
+</div></section>
+<section class="section career" id="karriere" aria-labelledby="career-title"><div class="wrap">
+  <span class="smallcaps">Karriere bei terraFIBER</span><h2 class="section-title" id="career-title">Gemeinsam Netze bauen.</h2>
+  <p>Werden Sie Teil eines Teams im Glasfaserausbau. Im Arbeitsalltag werden Deutsch sowie Bosnisch, Kroatisch und Serbisch gesprochen.</p>
+  <div class="job-cards">
+    <article><span>Offene Stelle</span><h3>Bauleiter (m/w/d)</h3><p>Koordination von Kolonnen, Baustellen und Projektabläufen.</p><a href="https://terrafiber.de/bauhleiter-m-w-d/" target="_blank" rel="noopener noreferrer">Stellenanzeige ansehen ↗</a></article>
+    <article><span>Offene Stelle</span><h3>Bauhelfer im Bereich Tiefbau, Hausanschluss und Montage (m/w/d)</h3><p>Unterstützung bei Tiefbau, Rohr- und Kabelverlegung sowie Hausanschlüssen.</p><a href="https://terrafiber.de/bauhelfer-im-bereich-tiefbau-hausanschluss-und-montage-m-w-d/" target="_blank" rel="noopener noreferrer">Stellenanzeige ansehen ↗</a></article>
+  </div>
+  <div class="career-bottom"><div><strong>Ihre Vorteile</strong><ul><li>[Vorteil 1]</li><li>[Vorteil 2]</li><li>[Vorteil 3]</li></ul></div>
+    <a href="#kontakt" class="btn btn-primary" data-topic="Bewerbung">In 2 Minuten bewerben →</a>
+  </div>
+</div></section>
 <section class="section contact" id="kontakt" aria-labelledby="contact-title"><div class="wrap contact-flex"><div><span class="eyebrow smallcaps">Kontakt</span><h2 class="section-title" id="contact-title">Lassen Sie uns<br>etwas bewegen.</h2><p class="section-intro">Sie planen ein Glasfaserprojekt oder möchten mit Terra Fiber zusammenarbeiten? Wir freuen uns auf Ihre Anfrage.</p><div class="contact-info"><div class="contact-line"><div class="small-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></div><div><strong>E-Mail</strong><a href="mailto:info@terrafiber.de"><span>info@terrafiber.de</span></a></div></div><div class="contact-line"><div class="small-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3h4l1 5-3 2a15 15 0 0 0 5 5l2-3 5 1v4c0 2-2 4-4 4A15 15 0 0 1 3 7c0-2 2-4 4-4z"/></svg></div><div><strong>Telefon</strong><a href="tel:+4959738270070"><span>+49 5973 8270070</span></a></div></div><div class="contact-line"><div class="small-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><strong>Anschrift</strong><span>Erich-Kästner-Straße 29<br>48485 Neuenkirchen, Deutschland</span></div></div></div></div>
 <form class="contact-form" id="mailForm"><h3>Ihre Projektanfrage</h3><p>Demonstration: Ein Klick bereitet eine E-Mail in Ihrem lokalen E-Mail-Programm vor.</p><div class="form-grid"><div class="form-field"><label for="name">Ihr Name *</label><input id="name" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></div><div class="form-field"><label for="company">Unternehmen</label><input id="company" name="company" autocomplete="organization" placeholder="Firmenname"></div></div><div class="form-field"><label for="email">Geschäftliche E-Mail *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="name@unternehmen.de"></div><div class="form-field"><label for="message">Wie können wir helfen? *</label><textarea id="message" name="message" required rows="5" placeholder="Beschreiben Sie Ihr Anliegen ..."></textarea></div><button class="btn btn-dark" type="submit">E-Mail-Anfrage vorbereiten ↗</button><div class="form-note">Die Demo speichert und übermittelt keine Formulardaten an einen Server. Erst Ihr E-Mail-Programm öffnet eine vorbereitete Nachricht; sie wird nicht automatisch versendet. Vor einem Produktivbetrieb ist ein datenschutzkonformes Formular-Backend nötig.</div></form></div></section>
 </main>
