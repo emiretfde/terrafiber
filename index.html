@@ -259,6 +259,7 @@ body{color:var(--ink)}
  .footer-grid .footer-identity{grid-column:1/-1}
 }
 </style>
+<link rel="stylesheet" href="/assets/hero-map.css">
 </head>
 <body>
 <div class="preview-bar" role="note">REDESIGN-STUDIE · KONZEPT 08 · NICHT VERÖFFENTLICHT · INHALTE, RECHTSTEXTE, BILDER UND FORMULARVERSAND VOR FREIGABE PRÜFEN</div>
@@ -287,64 +288,19 @@ body{color:var(--ink)}
     <div class="hero-actions"><a class="btn btn-primary" href="#kontakt">Projekt besprechen <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#leistungen">Leistungen entdecken <span aria-hidden="true">→</span></a></div>
     
   </div>
-  <div class="hero-art" aria-label="Abstrakte Illustration eines Glasfaserinfrastruktur-Netzes"><div class="art-canvas"><div class="art-grid"></div>
-    <svg class="diagram" viewBox="0 0 600 520" role="img" aria-label="Animierte Glasfasertrasse: kleine Lichtpunkte fließen vom Hauptkabel zu drei Hausanschlüssen">
-      <defs>
-        <linearGradient id="road" x1="0" x2="1"><stop stop-color="#304054"/><stop offset="1" stop-color="#182b44"/></linearGradient>
-        <linearGradient id="cable" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#74d4ff"/><stop offset="1" stop-color="#0f91ed"/></linearGradient>
-        <filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
-        <filter id="particle-blur" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="2.2"/></filter>
-        <filter id="terminal-blur" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter>
-      </defs>
-      <path d="M-120 455 L380 115 L710 210 L210 560 Z" fill="url(#road)" stroke="#5b7c9f" stroke-opacity=".23"/>
-      <path d="M-90 443 L380 141 L685 233" stroke="#202f42" stroke-width="50" fill="none"/>
-      <path d="M-90 443 L380 141 L685 233" stroke="#9db7ca" stroke-width="1.5" stroke-dasharray="9 14" fill="none" opacity=".5"/>
-      <path class="fiber-halo" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="#46bcff" stroke-width="12" fill="none" opacity=".10" filter="url(#glow)"/>
-      <path id="fiber-route" class="fiber-core" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="url(#cable)" stroke-width="4.3" fill="none"/>
-      <path class="fiber-highlights" d="M-24 470 C93 405 172 311 263 271 S379 182 434 198 S542 250 625 229" stroke="#c7f1ff" stroke-width="1.5" fill="none"/>
-      <g class="network-links" stroke="#83bddd" stroke-width="2.4" fill="none" opacity=".85">
-        <path id="branch-route-1" d="M152 343 L130 234 L54 168"/>
-        <path id="branch-route-2" d="M279 264 L300 129 L369 90"/>
-        <path id="branch-route-3" d="M447 202 L498 143 L569 109"/>
-      </g>
-      <!-- House symbols share the same proportions and isometric perspective. -->
-      <g stroke="#acc9df" stroke-width="1.7" stroke-linejoin="round">
-        <g class="network-house"><path d="M44 112 L74 130 L44 148 L14 130Z" fill="#2b4662"/><path d="M14 130 L44 148 L44 191 L14 174Z" fill="#1c3049"/><path d="M44 148 L74 130 L74 174 L44 191Z" fill="#28425c"/></g>
-        <g class="network-house"><path d="M359 33 L389 51 L359 69 L329 51Z" fill="#2b4662"/><path d="M329 51 L359 69 L359 112 L329 95Z" fill="#1c3049"/><path d="M359 69 L389 51 L389 95 L359 112Z" fill="#28425c"/></g>
-        <g class="network-house"><path d="M559 52 L589 70 L559 88 L529 70Z" fill="#2b4662"/><path d="M529 70 L559 88 L559 131 L529 114Z" fill="#1c3049"/><path d="M559 88 L589 70 L589 114 L559 131Z" fill="#28425c"/></g>
-      </g>
-      <!-- Modest halo at main junctions; illuminated by dots crossing the node. -->
-      <g class="network-active-halos" aria-hidden="true" fill="#72d6ff" filter="url(#terminal-blur)">
-        <circle class="node-active-halo" cx="152" cy="343" r="13" opacity="0"/>
-        <circle class="node-active-halo" cx="279" cy="264" r="13" opacity="0"/>
-        <circle class="node-active-halo" cx="447" cy="202" r="13" opacity="0"/>
-      </g>
-      <g class="house-active-halos" aria-hidden="true" fill="#79dcff" filter="url(#terminal-blur)">
-        <circle class="house-active-halo" cx="54" cy="168" r="13" opacity="0"/>
-        <circle class="house-active-halo" cx="369" cy="90" r="13" opacity="0"/>
-        <circle class="house-active-halo" cx="569" cy="109" r="13" opacity="0"/>
-      </g>
-      <g class="network-main-nodes" fill="#71cfff" stroke="#112842" stroke-width="7">
-        <circle class="pulse-node" cx="152" cy="343" r="8"/>
-        <circle class="pulse-node" style="animation-delay:1.1s" cx="279" cy="264" r="8"/>
-        <circle class="pulse-node" style="animation-delay:2.2s" cx="447" cy="202" r="8"/>
-      </g>
-      <g class="network-terminals" fill="#8edbff">
-        <circle class="signal-dot" cx="54" cy="168" r="4.8"/>
-        <circle class="signal-dot" cx="369" cy="90" r="4.8"/>
-        <circle class="signal-dot" cx="569" cy="109" r="4.8"/>
-      </g>
-      <!-- JavaScript populates the animated particles using the exact route geometry. -->
-      <g id="fiber-particles-main" aria-hidden="true" pointer-events="none"></g>
-      <g id="fiber-particles-branches" aria-hidden="true" pointer-events="none"></g>
-      <g fill="#a9bdd0" font-size="10" font-family="Arial,sans-serif" letter-spacing="2">
-        <text x="22" y="225">FTTH</text><text x="300" y="143">NETZ</text><text x="411" y="323">HAUSANSCHLUSS</text>
-      </g>
-    </svg>
-    <div class="art-badge"><strong>PLANEN · BAUEN · AKTIVIEREN</strong><span>Deutschland · Belgien · Niederlande</span></div>
-    <div class="art-side"><span>Unser Ansatz</span><strong>Planen.<br>Bauen.<br>Aktivieren.</strong></div><div class="hero-caption">Illustrative Darstellung · Konzept</div>
-  </div></div>
-</div></section>
+  <div class="hero-art"><div class="art-canvas neighborhood-map" aria-hidden="true">
+<svg class="diagram map-diagram" viewBox="0 0 640 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="map-soft-halo" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3.2"/></filter></defs>
+<g class="map-streets" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 293 L145 288 Q182 282 189 252 L326 254 Q385 264 444 281 L617 327"/><path d="M173 23 L177 225 Q182 268 166 305 L139 485"/><path d="M320 31 L319 222 Q313 298 290 465"/><path d="M472 19 L455 247 Q459 298 612 381"/><path d="M18 388 L146 342 Q229 345 300 365 L616 465"/></g>
+<g class="map-footprints" fill="none" stroke="currentColor" stroke-width="1.15"><rect x="75" y="83" width="18" height="24" rx="1"/><rect x="232" y="80" width="19" height="28" rx="1"/><rect x="379" y="140" width="20" height="27" rx="1"/><rect x="415" y="205" width="21" height="29" rx="1"/><rect x="545" y="126" width="18" height="26" rx="1"/><rect x="45" y="198" width="19" height="23" rx="1"/><rect x="294" y="327" width="24" height="34" rx="1"/><rect x="387" y="336" width="19" height="31" rx="1"/><rect x="557" y="437" width="17" height="19" rx="1"/><rect x="72" y="420" width="16" height="23" rx="1"/></g>
+<g class="map-cables" fill="none" stroke="#4A9BEA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 L425 273 H548"/><path d="M64 273 H144"/></g>
+<g class="map-branches" fill="none" stroke="#4A9BEA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M167 273 V208 H120 V177"/><path d="M204 237 H239 V137"/><path d="M330 249 H353 V176"/><path d="M475 273 V200 H496 V169"/><path d="M547 273 V251 L563 239 V225"/><path d="M144 273 V326 H114 V356"/><path d="M204 237 H222 V360"/><path d="M330 249 V389"/><path d="M425 273 H430 V370"/><path d="M508 273 L536 323 V391"/></g>
+<g class="map-houses" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><g class="map-house map-connected" data-home="0" transform="translate(120 177)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="1" transform="translate(239 137)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="2" transform="translate(353 176)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="3" transform="translate(496 169)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="4" transform="translate(563 225)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="5" transform="translate(114 356)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="6" transform="translate(222 360)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="7" transform="translate(330 389)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="8" transform="translate(430 370)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house map-connected" data-home="9" transform="translate(536 391)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house" transform="translate(79 106)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g><g class="map-house" transform="translate(574 371)"><path d="M-12 -4 L0 -15 L12 -4 V11 H-12 Z"/></g></g>
+<g class="map-network-node"><circle cx="64" cy="273" r="12" fill="none" stroke="#4A9BEA" stroke-width="1.5"/><circle class="map-node-core" cx="64" cy="273" r="5" fill="#4A9BEA"/></g>
+<g class="map-travel-paths" fill="none" opacity="0" pointer-events="none"><path id="map-route-0" d="M64 273 H167 V208 H120 V177"/><path id="map-route-1" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H239 V137"/><path id="map-route-2" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 H353 V176"/><path id="map-route-3" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 L425 273 H475 V200 H496 V169"/><path id="map-route-4" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 L425 273 H547 V251 L563 239 V225"/><path id="map-route-5" d="M64 273 H144 V326 H114 V356"/><path id="map-route-6" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H222 V360"/><path id="map-route-7" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 V389"/><path id="map-route-8" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 L425 273 H430 V370"/><path id="map-route-9" d="M64 273 H171 Q186 273 186 255 V245 Q186 237 204 237 H270 Q302 237 330 249 L425 273 H508 L536 323 V391"/></g>
+<g id="map-light-pulse" opacity="0" pointer-events="none"><circle r="8" fill="#fff" opacity=".35" filter="url(#map-soft-halo)"/><circle r="3.3" fill="#fff"/></g>
+</svg></div></div>
+</section>
 <section class="section rollout" id="ablauf" aria-labelledby="rollout-title"><div class="wrap">
   <span class="eyebrow smallcaps">Der Ablauf</span><h2 class="section-title" id="rollout-title">So läuft Ihr Glasfaserausbau</h2>
   <ol class="rollout-steps">
@@ -496,112 +452,6 @@ if(cookieBtn&&cookieDialog)cookieBtn.addEventListener('click',function(){if(type
 })();
 </script>
 
-<script>
-/* terraFIBER v7: several small light particles follow the main fiber.
-   Every time one reaches a junction, a matching particle enters that
-   house branch. The house endpoint lights up only when it arrives.
-   Nodes and houses remain stationary. */
-(function(){
-  'use strict';
-  var svgNS='http://www.w3.org/2000/svg';
-  var route=document.getElementById('fiber-route');
-  var branches=[
-    document.getElementById('branch-route-1'),
-    document.getElementById('branch-route-2'),
-    document.getElementById('branch-route-3')
-  ];
-  var mainLayer=document.getElementById('fiber-particles-main');
-  var branchLayer=document.getElementById('fiber-particles-branches');
-  var nodes=Array.prototype.slice.call(document.querySelectorAll('.network-main-nodes .pulse-node'));
-  var nodeHalos=Array.prototype.slice.call(document.querySelectorAll('.network-active-halos .node-active-halo'));
-  var terminals=Array.prototype.slice.call(document.querySelectorAll('.network-terminals .signal-dot'));
-  var houseHalos=Array.prototype.slice.call(document.querySelectorAll('.house-active-halos .house-active-halo'));
-  if(!route||branches.some(function(b){return !b})||!mainLayer||!branchLayer||
-     nodes.length!==3||nodeHalos.length!==3||terminals.length!==3||houseHalos.length!==3||
-     !window.requestAnimationFrame||!route.getTotalLength)return;
-  var motion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');
-  if(motion&&motion.matches)return;
-
-  var mainLength=route.getTotalLength();
-  var branchLengths=branches.map(function(b){return b.getTotalLength()});
-  var junctions=nodes.map(function(node){
-    var x=Number(node.getAttribute('cx')),y=Number(node.getAttribute('cy'));
-    var bestD=0,bestError=Infinity;
-    /* Locate each fixed junction precisely on the curving trunk. */
-    for(var k=0;k<=1100;k++){
-      var distance=mainLength*k/1100,pt=route.getPointAtLength(distance);
-      var delta=(pt.x-x)*(pt.x-x)+(pt.y-y)*(pt.y-y);
-      if(delta<bestError){bestError=delta;bestD=distance}
-    }
-    return bestD;
-  });
-  var speed=.105;        /* SVG units per millisecond */
-  var spacing=58;        /* Multiple visible, small dots on the main line */
-  var cycleLength=mainLength+130;
-  var particleCount=Math.max(10,Math.floor(cycleLength/spacing));
-  var mainDots=[],branchDots=[[],[],[]];
-  var startTime=null;
-  function mod(value,max){return ((value%max)+max)%max}
-  function makeDot(parent,index){
-    var group=document.createElementNS(svgNS,'g');
-    group.setAttribute('opacity','0');
-    var blur=document.createElementNS(svgNS,'circle');
-    blur.setAttribute('r',(4.3+(index%3)*.3).toFixed(1));
-    blur.setAttribute('fill','#65d4ff');
-    blur.setAttribute('opacity','.31');
-    blur.setAttribute('filter','url(#particle-blur)');
-    group.appendChild(blur);
-    var core=document.createElementNS(svgNS,'circle');
-    core.setAttribute('r',(1.8+(index%3)*.25).toFixed(2));
-    core.setAttribute('fill',index%4===0?'#ecfcff':'#b0ecff');
-    group.appendChild(core);
-    parent.appendChild(group);
-    return group;
-  }
-  for(var i=0;i<particleCount;i++){
-    mainDots.push(makeDot(mainLayer,i));
-    for(var b=0;b<3;b++)branchDots[b].push(makeDot(branchLayer,i+b));
-  }
-  function place(element,path,distance,visible,pathLength){
-    element.setAttribute('opacity',visible?'1':'0');
-    if(!visible)return;
-    var pt=path.getPointAtLength(Math.max(0,Math.min(pathLength,distance)));
-    element.setAttribute('transform','translate('+pt.x.toFixed(2)+' '+pt.y.toFixed(2)+')');
-  }
-  function animate(now){
-    if(startTime===null)startTime=now;
-    var elapsed=(now-startTime)*speed;
-    var trunkPositions=[];
-    for(var j=0;j<particleCount;j++){
-      var traveled=mod(elapsed-j*spacing,cycleLength);
-      trunkPositions.push(traveled);
-      place(mainDots[j],route,traveled,traveled<=mainLength,mainLength);
-    }
-    for(var branchIndex=0;branchIndex<3;branchIndex++){
-      var arrivalGlow=0,nearNodeGlow=0;
-      var branchLength=branchLengths[branchIndex];
-      var junction=junctions[branchIndex];
-      for(var p=0;p<particleCount;p++){
-        var trunkDist=trunkPositions[p];
-        var branchDist=mod(elapsed-p*spacing-junction,cycleLength);
-        place(branchDots[branchIndex][p],branches[branchIndex],branchDist,branchDist<=branchLength,branchLength);
-        var nodeDelta=Math.abs(trunkDist-junction);
-        nearNodeGlow=Math.max(nearNodeGlow,Math.max(0,1-nodeDelta/22));
-        /* Flash starts exactly when a small dot arrives at the house endpoint.
-           Decay takes about 0.36 seconds, without moving the socket. */
-        if(branchDist>=branchLength&&branchDist<branchLength+38){
-          arrivalGlow=Math.max(arrivalGlow,1-(branchDist-branchLength)/38);
-        }
-      }
-      nodeHalos[branchIndex].setAttribute('opacity',(nearNodeGlow*.52).toFixed(3));
-      nodes[branchIndex].setAttribute('fill',nearNodeGlow>.15?'#d1f7ff':'#71cfff');
-      houseHalos[branchIndex].setAttribute('opacity',(arrivalGlow*.82).toFixed(3));
-      terminals[branchIndex].setAttribute('fill',arrivalGlow>.12?'#f1fdff':'#8edbff');
-    }
-    window.requestAnimationFrame(animate);
-  }
-  window.requestAnimationFrame(animate);
-})();
-</script>
+<script defer src="/assets/hero-map.js"></script>
 </body>
 </html>
