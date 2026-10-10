@@ -1,4 +1,4 @@
-# terraFIBER — Redesign-Studie · Konzept 08
+# terraFIBER — Redesign-Studie · Konzept 09
 
 Javno dostupna testna prezentacija: https://terrafiber.pages.dev/
 
@@ -9,6 +9,25 @@ Izvorni kod: https://github.com/emiretfde/terrafiber
 - `_headers` — noindex i osnovna sigurnosna zaglavlja
 - `IZVORI.md` — izvorni javni podaci i ogranicenja
 
+
+## Konzept 09 (10.10.2026)
+
+Visuelle Überarbeitung für einen sachlichen Bau- und Infrastrukturauftritt, angelehnt an klare Informationsarchitektur bei LEONHARD WEISS, Glaspoort und Circet — ohne deren Gestaltung zu kopieren.
+
+- Hero-Siedlungskarte und deren `assets/hero-map.js` / `assets/hero-map.css` bleiben unangetastet; nur der linke Titel und Untertitel werden sachlicher und einfarbig.
+- Direkt nach dem Hero führt eine zusätzliche helle Bürgerservice-Schnellleiste zu Termin, Problemmeldung und FAQ.
+- Alle Bereiche unter dem Hero in Weiß bzw. #F3F5F8 mit dunkelblauem Text und einer sachlichen Akzentfarbe #0759a5; Footer unverändert dunkel.
+- IBM Plex Sans (400/500/600) wird lokal aus `assets/fonts/` ausgeliefert; SIL OFL liegt bei.
+- Leistungen als offene zweispaltige Liste mit einheitlichen Linienicons, statt vier dekorativer Kacheln.
+- „Über terraFIBER“: großes Teamfoto links, präziser Text rechts; Foto-Band über die volle Breite nach den Leistungen.
+- Galerie als horizontaler Streifen mit fünf Bildern und konkreten Arbeitsbezeichnungen.
+- Aßlar-Berghausen als Referenzprojekt mit ausgewiesenen *Planwerten des Gesamtprojekts* und einem nicht dem Projekt zugeordneten Beispielfoto.
+- Qualität als Text-/Nachweisliste und reservierter Bereich für Auftraggeber-/Zertifikatslogos.
+- Bürgerservice, Stellenangebote, alle vorhandenen Daten und das noch nicht aktive Kontaktformular sind erhalten.
+- Nur Bürgerservice-Aktionen und Jobangebote bleiben als flache gerahmte Karten.
+- Alle JavaScript-Animationen außerhalb der SVG-Karte wurden entfernt bzw. per CSS ausgeschaltet.
+
+**Noch offen:** Die verwendeten Originalfotos werden vorübergehend weiterhin von `terrafiber.de` geladen. Die vorbereitete `scripts/prepare_images.py` ermöglicht WebP-Import nach Erhalt der Originale. Kontaktformular-Backend und Prüffreigaben bleiben offen. Alle unbekannten Kennzahlen/Nachweise bleiben als Platzhalter gekennzeichnet.
 
 ## Konzept 08 (10.10.2026)
 
