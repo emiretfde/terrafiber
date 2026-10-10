@@ -1,4 +1,4 @@
-# Terra Fiber GmbH — Redizajn v5 (DEMO)
+# Terra Fiber GmbH — Redizajn v7 (DEMO)
 
 Javno dostupna testna prezentacija: https://terrafiber.pages.dev/
 
@@ -9,6 +9,15 @@ Izvorni kod: https://github.com/emiretfde/terrafiber
 - `_headers` — noindex i osnovna sigurnosna zaglavlja
 - `IZVORI.md` — izvorni javni podaci i ogranicenja
 
+
+## Promjene v7 (10.10.2026)
+
+- Uklonjen veliki svjetlosni impuls iz v5; glavni kabl sada prenosi niz malih, umjereno osvijetljenih cestica.
+- Na tri fiksna cvora tok se odvaja na tri stvarne SVG grane koje zavrsavaju u terminalima nacrtanih kuca.
+- Prikljucci u kucama kratko zasvijetle **tek pri dolasku** signala (oko 0,36 s), pa se vrate u osnovno stanje.
+- Za putanje se koristi izvorna SVG geometrija; sve kucice i cvorovi su nepomicni.
+- Korisnicima s ukljucenim `prefers-reduced-motion` animacija se ne pokrece.
+- Samo je demo; slike sa starog sajta jos se ucitavaju sa `terrafiber.de`.
 
 ## Promjene v5 (10.10.2026)
 
