@@ -1,0 +1,41 @@
+name: Verify immersive FTTH concept B
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-concept-b.yml'
+      - '.github/qa/verify-concept-b.cjs'
+      - 'assets/concept-b.css'
+      - 'assets/concept-b.js'
+      - 'concept-b/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve site
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/terra-concept-b.log 2>&1 &
+          sleep 2
+          curl -fsS http://127.0.0.1:8123/concept-b/ >/dev/null
+      - name: Test A/B selectors, locales, mobile and canvas
+        run: node .github/qa/verify-concept-b.cjs
+      - name: Commit concept B screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/screenshots/terraFIBER-conceptB-desktop.png docs/screenshots/terraFIBER-conceptB-mobile.png
+          git diff --cached --quiet || git commit -m "Add Konzept B desktop and mobile previews"
+          git pull --rebase origin main
+          git push
