@@ -10,6 +10,15 @@ Izvorni kod: https://github.com/emiretfde/terrafiber
 - `IZVORI.md` — izvorni javni podaci i ogranicenja
 
 
+## English version (11.10.2026)
+
+- German homepage: https://terrafiber.pages.dev/ (`index.html`).
+- Full English version: https://terrafiber.pages.dev/en/ (`en/index.html`).
+- The top language switch now links DE and EN; NL remains disabled until a Dutch translation is approved.
+- All sections, project quantities, placeholders, job postings, resident-service contact details, form fields and consent notice are translated without changing facts.
+- Same v9 design, IBM Plex Sans, hero SVG, `hero-map.js`, contact form guard and noindex; local font and script URLs use root-relative paths.
+- Existing legal documents currently link to the German public site. Before publishing commercially, English legal information and company-approved English copy should be reviewed. Form submission is still disabled pending a proper backend.
+
 ## Konzept 09 (10.10.2026)
 
 Visuelle Überarbeitung für einen sachlichen Bau- und Infrastrukturauftritt, angelehnt an klare Informationsarchitektur bei LEONHARD WEISS, Glaspoort und Circet — ohne deren Gestaltung zu kopieren.
