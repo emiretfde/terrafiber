@@ -36,7 +36,7 @@ Visuelle Überarbeitung für einen sachlichen Bau- und Infrastrukturauftritt, an
 - Nur Bürgerservice-Aktionen und Jobangebote bleiben als flache gerahmte Karten.
 - Alle JavaScript-Animationen außerhalb der SVG-Karte wurden entfernt bzw. per CSS ausgeschaltet.
 
-**Noch offen:** Die verwendeten Originalfotos werden vorübergehend weiterhin von `terrafiber.de` geladen. Die vorbereitete `scripts/prepare_images.py` ermöglicht WebP-Import nach Erhalt der Originale. Kontaktformular-Backend und Prüffreigaben bleiben offen. Alle unbekannten Kennzahlen/Nachweise bleiben als Platzhalter gekennzeichnet.
+**Fotostatus (11.10.2026):** Sieben Originalmotive der bestehenden Unternehmensgalerie wurden erfolgreich abgerufen, in 14 lokale WebP-Dateien (800/1600 px) umgewandelt und in **DE sowie EN** integriert. Die Beschriftungen wurden anhand der tatsächlichen Bildmotive korrigiert. Kontaktformular-Backend, Bildrechte-/Inhaltsfreigabe und unbekannte Kennzahlen/Nachweise sind weiterhin offen.
 
 ## Konzept 08 (10.10.2026)
 
@@ -49,7 +49,7 @@ Visuelle Überarbeitung für einen sachlichen Bau- und Infrastrukturauftritt, an
 - Karriere: beide vorhandenen Stellenanzeigen, Benefit-Platzhalter, 2-Minuten-Bewerbung-CTA.
 - Echte HTML-Formularfelder statt `mailto`, aber **Versand deaktiviert bis zum sicheren Backend**. Keine personenbezogenen Formulardaten werden derzeit übermittelt.
 - Footer mit Adresse, Telefon, Öffnungszeiten, Impressum/Datenschutz und Cookie-Einstellungen.
-- **Bilder noch nicht lokal.** Originale von `terrafiber.de` können hier nicht heruntergeladen werden. Das vorbereitete Skript `scripts/prepare_images.py` erzeugt nach Bereitstellung die verlangten WebP 800/1600 und `srcset`. Siehe `BILDER_IMPORT_V8.md`.
+- **Historischer Stand v8:** Bilder waren damals noch extern eingebunden. Inzwischen (11.10.2026) lokal nach WebP (800/1600) migriert; siehe `BILDER_IMPORT_V8.md`.
 - Weiter offene Freigaben: [X] Hausanschlüsse, [Nachweise], [Leistungsumfang bestätigen], [Anzahl Kolonnen, Maschinen], [Vorteil 1–3], Firmenprofil PDF, Hinweisgebersystem-URL, NL/EN und Formular-Backend mit Datenschutzerklärung.
 
 ## Promjene v7 (10.10.2026)
