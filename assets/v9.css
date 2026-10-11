@@ -230,3 +230,6 @@ footer .footer-bottom{border-top:1px solid #334358;color:#aab9cb}
 .gallery-strip-item img{height:225px;object-position:center}
 @media(max-width:760px){.site-photo-band{height:260px}.gallery-strip-item img{height:210px}}
 @media(max-width:540px){.site-photo-band{height:220px}.gallery-strip-item img{height:215px}}
+
+/* Redesign-Hinweisleiste ausgeblendet (11.10.2026). Markup bleibt; noindex bleibt aktiv. */
+.preview-bar{display:none!important}
