@@ -59,6 +59,27 @@ const ROOT='http://127.0.0.1:8123';
   assert.ok(await page.locator('.hero-art .map-diagram').count()===1,'Original map must remain');
   await ctx.close();
  }
+ // Konzept C: GeoExpert-style point cloud, all locales and sizes.
+ for(const locale of [{name:'de',a:'/',c:'/concept-c/'},{name:'en',a:'/en/',c:'/concept-c/en/'},{name:'nl',a:'/nl/',c:'/concept-c/nl/'}]){
+  for(const size of [{w:1440,h:900},{w:375,h:812}]){
+   const ctx=await browser.newContext({viewport:{width:size.w,height:size.h}});
+   const page=await ctx.newPage();
+   const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+   await page.goto(ROOT+locale.c,{waitUntil:'domcontentloaded'});
+   await page.waitForTimeout(2600);
+   const info=await page.evaluate(()=>({lang:document.documentElement.lang,pageWidth:document.documentElement.scrollWidth,
+    mode:__tfHero.mode,frames:__tfHero.frames,lit:__tfHero.sample(),readout:document.getElementById('o-y').textContent,
+    active:document.querySelector('.concept-options a[aria-current="page"]')?.getAttribute('href'),
+    options:document.querySelectorAll('.concept-options a').length,
+    servicesCount:document.querySelectorAll('.services-grid .service').length,formPresent:!!document.getElementById('contactForm')}));
+   assert.equal(info.lang,locale.name);assert.equal(info.pageWidth,size.w,'horizontal overflow');
+   assert.equal(info.mode,'webgl');assert.ok(info.frames>3);assert.ok(info.lit>0.01,'Point cloud not painted');
+   assert.ok(/\d/.test(info.readout),'Readout not updating');assert.equal(info.active,locale.c);assert.equal(info.options,3);
+   assert.equal(info.servicesCount,4);assert.ok(info.formPresent);assert.deepEqual(errors,[]);
+   console.log('C '+locale.name+' '+size.w,JSON.stringify(info));
+   await ctx.close();
+  }
+ }
  // Reduced motion: one still frame, no animation loop.
  {
   const ctx=await browser.newContext({reducedMotion:'reduce',viewport:{width:1440,height:900}});

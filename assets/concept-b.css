@@ -45,8 +45,9 @@ body .hero.hero-immersive h1{max-width:910px;font-size:clamp(48px,6vw,88px)!impo
 }
 @media(max-width:540px){
  .concept-switcher .concept-switcher-inner{min-height:50px;gap:9px}
- .concept-switcher .concept-options a{padding:7px 8px;font-size:11px}
- .concept-switcher .concept-label{font-size:10px}
+ .concept-switcher .concept-label{display:none}
+ .concept-switcher .concept-options{width:100%;gap:5px}
+ .concept-switcher .concept-options a{flex:1 1 0;padding:7px 4px;font-size:10.5px;white-space:nowrap;letter-spacing:-.01em}
  body .hero.hero-immersive{min-height:720px}
  body .hero.hero-immersive .hero-inner{min-height:720px;padding:250px 0 56px}
  body .hero.hero-immersive h1{font-size:clamp(35px,9vw,44px)!important;line-height:1.12!important}

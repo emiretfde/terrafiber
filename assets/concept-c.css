@@ -1,0 +1,38 @@
+/* Konzept C — terrain point cloud hero in the GeoExpert layout, terraFIBER blue.
+   Only .hero-c is styled here; switcher styles come from concept-b.css. */
+body .hero.hero-c{position:relative;isolation:isolate;overflow:hidden;display:grid;min-height:max(640px,min(calc(100svh - 175px),900px));background:radial-gradient(120% 80% at 70% 40%,#0f2740 0%,#061329 62%);color:#eef4fa}
+body .hero.hero-c:before{display:none!important}
+.hero-c canvas.cloud{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1;pointer-events:none}
+.hero-c:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to top,#061329 3%,rgba(6,19,41,0) 42%),linear-gradient(100deg,rgba(6,19,41,.82) 0%,rgba(6,19,41,.35) 42%,rgba(6,19,41,0) 62%)}
+.hero-c .hc-inner{display:grid;grid-template-rows:1fr auto;gap:clamp(20px,4vh,40px);padding:clamp(28px,5vh,56px) 0 clamp(28px,5vh,60px)}
+.hero-c .hc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.hero-c .hero-origin{margin:0;font-size:13px;letter-spacing:.02em;color:#a9bccd}
+.hero-c .readout{margin:0;display:grid;grid-template-columns:auto auto;gap:3px 22px;min-width:15.5rem;padding:14px 18px;font-size:12.5px;font-variant-numeric:tabular-nums;color:#93abc1;border:1px solid rgba(120,170,220,.2);background:rgba(6,19,41,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:3px}
+.hero-c .readout dt{color:#93abc1}
+.hero-c .readout dd{margin:0;text-align:right;color:#eef4fa}
+.hero-c .readout .hv{color:#5fb0ff}
+.hero-c .hc-bottom{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(18px,3vh,32px) 64px;align-items:end}
+body .hero.hero-c h1{margin:0;max-width:16ch;font-size:clamp(44px,5.6vw,86px);line-height:1.04;font-weight:600;letter-spacing:-.02em;color:#f2f7fc;text-wrap:balance;text-shadow:0 2px 40px rgba(6,19,41,.6)}
+.hero-c .hc-side{display:grid;gap:clamp(18px,3.4vh,30px)}
+.hero-c .hero-desc{margin:0;max-width:44ch;font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:#b6c7d6}
+.hero-c .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:0}
+.hero-c .hero-actions .btn{min-height:50px}
+.hero-c .hc-caption{position:absolute;right:max(24px,calc((100vw - 1192px)/2));bottom:14px;font-size:11.5px;color:rgba(147,171,193,.72)}
+.js .hero-c .hc-bottom>*,.js .hero-c .hc-top>*{animation:hc-rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+.js .hero-c .hc-side{animation-delay:.25s}
+.js .hero-c .hc-top>*{animation-delay:.5s}
+@keyframes hc-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:900px){
+ .hero-c .hc-bottom{grid-template-columns:1fr}
+ .hero-c .hc-caption{display:none}
+}
+@media(max-width:760px){
+ body .hero.hero-c{min-height:680px}
+ .hero-c .readout{display:none}
+ body .hero.hero-c h1{font-size:clamp(34px,9.4vw,52px);line-height:1.08}
+ .hero-c .hero-desc{font-size:15.5px}
+ .hero-c .hero-actions{flex-direction:column;align-items:stretch}
+ .hero-c .hero-actions .btn{width:100%}
+}
+@media(max-height:700px) and (min-width:901px){.hero-c .readout{padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){.js .hero-c .hc-bottom>*,.js .hero-c .hc-top>*{animation:none}}

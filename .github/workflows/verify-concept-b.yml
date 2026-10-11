@@ -9,6 +9,8 @@ on:
       - 'assets/concept-b.js'
       - 'assets/vendor/**'
       - 'concept-b/**'
+      - 'concept-c/**'
+      - 'assets/concept-c.*'
   workflow_dispatch:
 permissions:
   contents: write

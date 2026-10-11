@@ -16,6 +16,8 @@
 
 Eine kleine, dreisprachige **Konzept A / Konzept B**-Leiste oberhalb des Bürgerservice schaltet zwischen den Designs. Die Wahl bleibt bei Sprachwechsel erhalten; die darunter liegenden Leistungs-, Projekt-, Bürgerservice-, Kontakt- und Karrierebereiche sind in beiden Konzepten identisch.
 
+**Konzept C — Punktwolke nach dem GeoExpert-Prinzip, in terraFIBER-Blau:** DE `/concept-c/`, EN `/concept-c/en/`, NL `/concept-c/nl/`. Geländepunktwolke mit ruhiger Mulde, Scanlinie, laufender Messwertanzeige (illustrative UTM-Koordinaten) und Kameraparallaxe; Glasfasertrassen statt Katasterparzellen, ein pulsierender Abschnitt als Hausanschluss im Bau. `assets/concept-c.js` (Parameter im `CONFIG`-Block) / `assets/concept-c.css`. Alle drei Konzepte sind über die Leiste „Ansicht wählen“ erreichbar.
+
 **Hero Konzept B (v2, 11.10.2026): digitales Geländemodell mit FTTH-Netz.** WebGL über Three.js r128 (MIT, lokal in `assets/vendor/`, nur auf den B-Seiten geladen). Bestandteile:
 - Geländemodell als Punktwolke (~78 000 Punkte Desktop, ~29 000 Mobil) mit Schräglicht-Schummerung (Hillshade), Tal mit Flusslauf, Höhenzug im Hintergrund.
 - Höhenlinien per Marching Squares; jede 5. Linie als Zähllinie hervorgehoben.
