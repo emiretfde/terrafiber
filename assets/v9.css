@@ -233,3 +233,7 @@ footer .footer-bottom{border-top:1px solid #334358;color:#aab9cb}
 
 /* Redesign-Hinweisleiste ausgeblendet (11.10.2026). Markup bleibt; noindex bleibt aktiv. */
 .preview-bar{display:none!important}
+
+/* Konzept A: im einspaltigen Layout (Tablet/Handy) steht die Kartengrafik über dem Text (11.10.2026). */
+@media(max-width:1050px){.hero .hero-inner>.hero-art{order:-1;margin-top:0}.hero .hero-inner>.hero-content{order:0}}
+@media(max-width:760px){.hero .hero-inner>.hero-art{min-height:0}.hero .hero-inner>.hero-art .art-canvas{height:280px}}

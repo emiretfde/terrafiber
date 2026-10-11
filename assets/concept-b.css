@@ -14,6 +14,21 @@
 .nav .nav-lang .language-active{color:#fff;background:#0759a5}
 .nav .navlinks{order:2;margin-left:auto}
 .nav .mobile-toggle{order:4}
+@media(max-width:1100px) and (min-width:761px){
+ .nav{gap:14px}
+ .nav .navlinks{gap:11px}
+ .nav .navlinks a:not(.btn){font-size:11px}
+ .nav .navlinks .btn{padding-left:12px;padding-right:12px}
+ .nav .language-switch.nav-lang{margin-left:0;padding-left:8px;font-size:11px}
+ .nav .nav-lang a,.nav .nav-lang .language-active{min-width:24px;padding:0 4px}
+}
+@media(max-width:900px) and (min-width:761px){
+ .nav{gap:8px}
+ .nav .navlinks{gap:8px}
+ .nav .navlinks a:not(.btn){font-size:10.5px}
+ .nav .language-switch.nav-lang{border-left:0;padding-left:0}
+ .nav .logo{font-size:22px}
+}
 @media(max-width:760px){
  .nav .language-switch.nav-lang{margin-left:auto;padding-left:0;border-left:0}
 }
