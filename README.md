@@ -16,7 +16,14 @@
 
 Eine kleine, dreisprachige **Konzept A / Konzept B**-Leiste oberhalb des Bürgerservice schaltet zwischen den Designs. Die Wahl bleibt bei Sprachwechsel erhalten; die darunter liegenden Leistungs-, Projekt-, Bürgerservice-, Kontakt- und Karrierebereiche sind in beiden Konzepten identisch.
 
-Die neue Hero-Animation wurde unabhängig umgesetzt (Canvas2D-Punktfeld, ruhige Konturlinien, diskretes FTTH-Signal und leichte Mausreaktion). Keine GeoExpert-Assets oder fremden Skripte wurden übernommen. `assets/concept-b.css` / `assets/concept-b.js`; bei Reduced Motion bleibt eine statische Grafik sichtbar und außerhalb des Viewports bzw. im Hintergrund wird die Animation pausiert. `noindex` ist weiterhin aktiv.
+**Hero Konzept B (v2, 11.10.2026): digitales Geländemodell mit FTTH-Netz.** WebGL über Three.js r128 (MIT, lokal in `assets/vendor/`, nur auf den B-Seiten geladen). Bestandteile:
+- Geländemodell als Punktwolke (~78 000 Punkte Desktop, ~29 000 Mobil) mit Schräglicht-Schummerung (Hillshade), Tal mit Flusslauf, Höhenzug im Hintergrund.
+- Höhenlinien per Marching Squares; jede 5. Linie als Zähllinie hervorgehoben.
+- FTTH-Netz auf dem Relief: POP → Hauptrasse entlang des Tals → Abzweige zu Verteilern → Hausanschlüsse. Lichtimpulse laufen vom POP aus über die Netzlänge; Verteiler und Häuser leuchten beim Eintreffen des Impulses auf.
+- Kamera: langsames Schwenken plus dezente Mausparallaxe (Touch: keine Reaktion).
+- Pausiert außerhalb des Viewports und im Hintergrund-Tab; Reduced Motion = ein Standbild; ohne WebGL statische Canvas2D-Projektion desselben Geländes; Qualität wird bei schwachen Geräten bzw. niedriger Bildrate reduziert.
+
+Alle Stellschrauben (Farben, Relief, Höhenlinien, Impulsgeschwindigkeit/-abstand, Kameraschwenk, Parallaxe, Punktdichte) stehen im `CONFIG`-Block oben in `assets/concept-b.js`. Keine GeoExpert-Grafiken oder -Texte übernommen; nur dieselbe Bibliothek (Three.js). `noindex` ist weiterhin aktiv.
 
 Browser-Test: 1440px und 375px, alle drei Sprachen, A/B-Wechsel, Canvas sichtbar, keine horizontale Überbreite. Screenshots unter `docs/screenshots/terraFIBER-conceptB-{desktop,mobile}.png`.
 

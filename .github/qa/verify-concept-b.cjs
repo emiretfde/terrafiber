@@ -4,22 +4,27 @@ const assert=require('node:assert/strict');
 const ROOT='http://127.0.0.1:8123';
 (async()=>{
  fs.mkdirSync('docs/screenshots',{recursive:true});
- const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ const GL=['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'];
+ const browser=await chromium.launch({headless:true,args:GL});
  for(const locale of [{name:'de',a:'/',b:'/concept-b/'},{name:'en',a:'/en/',b:'/concept-b/en/'},{name:'nl',a:'/nl/',b:'/concept-b/nl/'}]){
   for(const size of [{name:'desktop',w:1440,h:900},{name:'mobile',w:375,h:812}]){
    const ctx=await browser.newContext({viewport:{width:size.w,height:size.h},deviceScaleFactor:1});
    const page=await ctx.newPage();
-   const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+   const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
    await page.goto(ROOT+locale.b,{waitUntil:'domcontentloaded',timeout:30000});
    await page.evaluate(()=>document.fonts.ready);
-   await page.waitForTimeout(1400);
+   await page.waitForTimeout(2600);
    const info=await page.evaluate(()=>({
     lang:document.documentElement.lang,
     pageWidth:document.documentElement.scrollWidth,innerWidth:innerWidth,
     title:document.querySelector('h1')?.textContent.trim(),
     fontLoaded:document.fonts.check('400 16px "IBM Plex Sans"'),
     canvasSize:(()=>{const c=document.querySelector('canvas.fiber-field');return [c?.width,c?.height]})(),
-    canvasPixels:(()=>{const c=document.querySelector('canvas.fiber-field');if(!c)return 0;const data=c.getContext('2d').getImageData(Math.floor(c.width*.72),Math.floor(c.height*.45),10,10).data;return [...data].filter(x=>x>0).length})(),
+    heroMode:window.__tfHero&&window.__tfHero.mode,
+    heroFrames:window.__tfHero&&window.__tfHero.frames,
+    canvasPixels:window.__tfHero&&window.__tfHero.sample?window.__tfHero.sample():0,
+    legend:!!document.querySelector('.terrain-legend'),
+    h1Visible:(()=>{const r=document.querySelector('h1').getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight+200})(),
     heroHeight:Math.round(document.querySelector('.hero-immersive')?.getBoundingClientRect().height||0),
     sections:[...document.querySelectorAll('section[id]')].length,
     aLink:document.querySelector('.concept-options a:first-child')?.getAttribute('href'),
@@ -32,7 +37,10 @@ const ROOT='http://127.0.0.1:8123';
    assert.equal(info.lang,locale.name);
    assert.equal(info.pageWidth,size.w,'horizontal overflow');
    assert.ok(info.canvasSize[0]>0&&info.canvasSize[1]>0,'Canvas not sized');
-   assert.ok(info.canvasPixels>0,'Canvas not painted');
+   assert.equal(info.heroMode,'webgl','WebGL terrain did not start');
+   assert.ok(info.heroFrames>3,'Terrain not animating');
+   assert.ok(info.canvasPixels>0.01,'Terrain not painted');
+   assert.ok(info.legend&&info.h1Visible);
    assert.ok(info.heroHeight>480,'Hero too short');
    assert.equal(info.aLink,locale.a);assert.equal(info.bActive,locale.b);
    assert.equal(info.fontLoaded,true);assert.equal(info.servicesCount,4);assert.equal(info.galleryImages,4);
@@ -51,14 +59,31 @@ const ROOT='http://127.0.0.1:8123';
   assert.ok(await page.locator('.hero-art .map-diagram').count()===1,'Original map must remain');
   await ctx.close();
  }
- // Static reduced-motion illustration must still be painted.
- const ctx=await browser.newContext({reducedMotion:'reduce'});
- const page=await ctx.newPage();
- await page.goto(ROOT+'/concept-b/',{waitUntil:'domcontentloaded'});
- await page.waitForTimeout(400);
- const staticOk=await page.locator('canvas.fiber-field').evaluate(c=>c.width>0&&c.getContext('2d').getImageData(c.width/2|0,c.height/2|0,1,1).data[3]>0);
- assert.equal(staticOk,true);
- console.log('Reduced-motion canvas: visible static artwork');
- await ctx.close();
+ // Reduced motion: one still frame, no animation loop.
+ {
+  const ctx=await browser.newContext({reducedMotion:'reduce',viewport:{width:1440,height:900}});
+  const page=await ctx.newPage();
+  await page.goto(ROOT+'/concept-b/',{waitUntil:'domcontentloaded'});
+  await page.waitForTimeout(1500);
+  const a=await page.evaluate(()=>window.__tfHero.frames);
+  await page.waitForTimeout(1200);
+  const r=await page.evaluate(()=>({mode:__tfHero.mode,frames:__tfHero.frames,lit:__tfHero.sample()}));
+  assert.equal(r.mode,'webgl');assert.ok(r.lit>0.01,'Reduced-motion frame not painted');
+  assert.ok(r.frames-a<=2,'Animation keeps running with reduced motion');
+  console.log('Reduced motion: static frame',JSON.stringify(r));
+  await ctx.close();
+ }
+ // No WebGL: static Canvas2D fallback of the same terrain, no errors.
+ {
+  const b2=await chromium.launch({headless:true,args:['--no-sandbox','--disable-webgl','--disable-3d-apis']});
+  const page=await b2.newPage({viewport:{width:1440,height:900}});
+  const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+  await page.goto(ROOT+'/concept-b/',{waitUntil:'domcontentloaded'});
+  await page.waitForTimeout(1200);
+  const r=await page.evaluate(()=>{const c=document.querySelector('canvas.fiber-field');const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let n=0;for(let i=3;i<d.length;i+=4)if(d[i]>0)n++;return {mode:__tfHero.mode,lit:n/(c.width*c.height)}});
+  assert.equal(r.mode,'canvas2d');assert.ok(r.lit>0.005,'Fallback not painted');assert.deepEqual(errors,[]);
+  console.log('No-WebGL fallback',JSON.stringify(r));
+  await b2.close();
+ }
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
