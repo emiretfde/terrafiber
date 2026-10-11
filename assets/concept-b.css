@@ -35,21 +35,21 @@ body .hero.hero-immersive:before,body .hero.hero-immersive:after{display:none!im
 body .hero.hero-immersive .hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;min-height:clamp(600px,calc(100svh - 160px),860px);padding:104px 0 93px;gap:0;pointer-events:none}
 .hero-immersive .hero-content{max-width:930px;pointer-events:auto}
 .hero-immersive .hero-origin{font-size:13px!important;letter-spacing:.02em!important;text-transform:none!important;color:#cad5df!important;margin:0 0 25px!important}
-body .hero.hero-immersive h1{max-width:910px;font-size:clamp(48px,6vw,88px)!important;line-height:1.07!important;font-weight:600;letter-spacing:normal!important;color:#f4f7fb;margin:0 0 27px!important;text-wrap:balance}
+body .hero.hero-immersive h1{max-width:910px;font-size:clamp(40px,4.7vw,70px)!important;line-height:1.07!important;font-weight:600;letter-spacing:normal!important;color:#f4f7fb;margin:0 0 27px!important;text-wrap:balance}
 .hero-immersive .hero-desc{max-width:650px!important;font-size:18px!important;color:#c2d0db!important;line-height:1.7!important}
 .hero-immersive .hero-actions{display:flex;gap:12px;margin-top:33px!important}
 .hero-immersive .hero-actions .btn{min-height:48px}
 .hero-immersive .hero-note{position:absolute;right:0;bottom:49px;color:#9eb7c8;font-size:11px;letter-spacing:.02em;font-weight:500;text-align:right}
 .hero-immersive .hero-note span{display:block}
 @media(max-width:1050px){
- body .hero.hero-immersive h1{font-size:clamp(45px,6.5vw,75px)!important}
+ body .hero.hero-immersive h1{font-size:clamp(38px,5.4vw,60px)!important}
  .hero-immersive .fiber-field-shade{background:linear-gradient(90deg,rgba(4,13,27,.85),rgba(4,13,27,.26))}
 }
 @media(max-width:760px){
  .concept-switcher .concept-label{font-size:11px}
  body .hero.hero-immersive{min-height:660px}
  body .hero.hero-immersive .hero-inner{min-height:660px;justify-content:flex-end;padding:230px 0 64px}
- body .hero.hero-immersive h1{font-size:clamp(38px,7vw,56px)!important}
+ body .hero.hero-immersive h1{font-size:clamp(32px,6vw,46px)!important}
  .hero-immersive .fiber-field-shade{background:linear-gradient(to bottom,rgba(7,21,34,.35) 0%,rgba(7,21,34,0) 14%,rgba(7,21,34,0) 34%,rgba(7,21,34,.72) 58%,rgba(7,21,34,.9) 100%)}
  .hero-immersive .hero-note{right:0;bottom:30px}
 }
@@ -63,7 +63,7 @@ body .hero.hero-immersive h1{max-width:910px;font-size:clamp(48px,6vw,88px)!impo
  .concept-switcher .concept-options a{flex:1 1 0;padding:6px 3px;font-size:10px;white-space:nowrap;letter-spacing:-.01em}
  body .hero.hero-immersive{min-height:720px}
  body .hero.hero-immersive .hero-inner{min-height:720px;padding:250px 0 56px}
- body .hero.hero-immersive h1{font-size:clamp(35px,9vw,44px)!important;line-height:1.12!important}
+ body .hero.hero-immersive h1{font-size:clamp(30px,8vw,38px)!important;line-height:1.12!important}
  .hero-immersive .hero-desc{font-size:15px!important}
  .hero-immersive .hero-actions{flex-direction:column;align-items:stretch;width:100%}
  .hero-immersive .hero-actions .btn{width:100%}
