@@ -20,8 +20,7 @@ Eine kleine, dreisprachige **Konzept A / Konzept B**-Leiste oberhalb des Bürger
 - Geländemodell als Punktwolke (~78 000 Punkte Desktop, ~29 000 Mobil) mit Schräglicht-Schummerung (Hillshade), Tal mit Flusslauf, Höhenzug im Hintergrund.
 - Höhenlinien per Marching Squares; jede 5. Linie als Zähllinie hervorgehoben.
 - FTTH-Netz auf dem Relief: POP → Hauptrasse entlang des Tals → Abzweige zu Verteilern → Hausanschlüsse. Lichtimpulse laufen vom POP aus über die Netzlänge; Verteiler und Häuser leuchten beim Eintreffen des Impulses auf.
-- Kamera: langsames Schwenken plus deutliche Mausparallaxe (Touch: keine Reaktion).
-- Gelände reagiert auf den Mauszeiger: Anhebung unter dem Cursor, weiche Welle nach außen, Höhenlinien leuchten lupenartig auf (`hover*` im `CONFIG`).
+- Kamera: langsames Schwenken; bei Mausbewegung verschiebt sich das ganze Gelände sanft (Parallaxe wie bei GeoExpert, Touch: keine Reaktion).
 - Pausiert außerhalb des Viewports und im Hintergrund-Tab; Reduced Motion = ein Standbild; ohne WebGL statische Canvas2D-Projektion desselben Geländes; Qualität wird bei schwachen Geräten bzw. niedriger Bildrate reduziert.
 
 Alle Stellschrauben (Farben, Relief, Höhenlinien, Impulsgeschwindigkeit/-abstand, Kameraschwenk, Parallaxe, Punktdichte) stehen im `CONFIG`-Block oben in `assets/concept-b.js`. Keine GeoExpert-Grafiken oder -Texte übernommen; nur dieselbe Bibliothek (Three.js). `noindex` ist weiterhin aktiv.

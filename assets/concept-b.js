@@ -41,16 +41,9 @@
     // Camera
     orbitAmplitude: 0.13,      // radians of slow autonomous sway
     orbitPeriod: 150,          // seconds for one full sway
-    parallax: 0.24,            // radians of yaw at the screen edge
-    parallaxLift: 22,          // camera height change at the screen edge
-    easing: 0.045,             // 0..1, lower = softer follow
-
-    // Terrain reaction under the cursor
-    hoverRadius: 30,           // world units of the swell around the cursor
-    hoverLift: 9,              // how high the terrain rises under the cursor
-    hoverRipple: 0.4,          // strength of the soft outward wave
-    hoverGlow: 1.0,            // brightening of points/contours near the cursor
-    hoverFollow: 0.10,         // 0..1, how fast the swell follows the cursor
+    parallax: 0.18,            // radians of yaw at the screen edge
+    parallaxLift: 14,          // camera height change at the screen edge
+    easing: 0.04,              // 0..1, lower = softer follow
 
     // Performance
     maxPixelRatio: 1.75,
@@ -230,14 +223,7 @@
   var GLSL_COMMON = [
     'uniform float uTime; uniform float uBreath; uniform float uPR;',
     'uniform float uSpeed; uniform float uSpacing; uniform float uTail;',
-    'uniform vec2 uMouse; uniform float uHover; uniform float uHR; uniform float uHL; uniform float uHRip; uniform float uHG;',
     'float breathe(vec3 p){ return uBreath * sin(uTime*0.11 + p.x*0.021) * cos(uTime*0.083 + p.z*0.027); }',
-    'float hoverD2(vec3 p){ vec2 d = p.xz - uMouse; return dot(d,d); }',
-    // Swell under the cursor plus a soft travelling ring; shared by every layer so cables stay on the ground.
-    'float field(vec3 p){ float d2 = hoverD2(p); float r2 = uHR*uHR; float bump = exp(-d2/r2);',
-    ' float ring = uHRip * sin(sqrt(d2)*0.32 - uTime*2.0) * exp(-d2/(r2*3.5));',
-    ' return breathe(p) + uHover * uHL * (bump + ring); }',
-    'float glow(vec3 p){ return uHover * uHG * exp(-hoverD2(p)/(uHR*uHR*1.8)); }',
     // Comet-shaped pulse travelling outward from the POP; s = network distance.
     'float pulse(float s, float tail){ float p = (uTime*uSpeed - s)/uSpacing; if (p < 0.0) return 0.0; float f = fract(p); return exp(-f*uSpacing/tail); }',
     'float depthFade(float d){ return smoothstep(120.0, 190.0, d) * (1.0 - smoothstep(400.0, 520.0, d)); }',
@@ -263,9 +249,7 @@
 
     var uniforms = {
       uTime: { value: 0 }, uBreath: { value: CONFIG.breathing }, uPR: { value: pr },
-      uSpeed: { value: CONFIG.pulseSpeed }, uSpacing: { value: CONFIG.pulseSpacing }, uTail: { value: CONFIG.pulseTail },
-      uMouse: { value: new THREE.Vector2(0, 0) }, uHover: { value: 0 }, uHR: { value: CONFIG.hoverRadius },
-      uHL: { value: CONFIG.hoverLift }, uHRip: { value: CONFIG.hoverRipple }, uHG: { value: CONFIG.hoverGlow }
+      uSpeed: { value: CONFIG.pulseSpeed }, uSpacing: { value: CONFIG.pulseSpacing }, uTail: { value: CONFIG.pulseTail }
     };
     var scene = new THREE.Scene();
 
@@ -300,8 +284,8 @@
       uniforms: Object.assign({ uSize: { value: mobile ? 2.6 : 2.4 } }, uniforms),
       transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor, vertexColors: true,
       vertexShader: GLSL_COMMON + '\nattribute float rnd; uniform float uSize; varying vec3 vC; varying float vA;\n' +
-        'void main(){ vec3 p = position; p.y += field(p); vec4 mv = modelViewMatrix * vec4(p,1.0); float d = -mv.z;\n' +
-        ' float g = glow(p); vC = mix(color, vec3(0.80, 0.90, 1.0), g*0.35); vA = depthFade(d) * edgeFade(p) * (0.62 + 0.38*rnd) * clamp(1.45 - d/560.0, 0.55, 1.0) * (1.0 + g*0.9);\n' +
+        'void main(){ vec3 p = position; p.y += breathe(p); vec4 mv = modelViewMatrix * vec4(p,1.0); float d = -mv.z;\n' +
+        ' vC = color; vA = depthFade(d) * edgeFade(p) * (0.62 + 0.38*rnd) * clamp(1.45 - d/560.0, 0.55, 1.0);\n' +
         ' gl_PointSize = clamp(uSize * uPR * (175.0 / d), 0.6*uPR, 3.0*uPR); gl_Position = projectionMatrix * mv; }',
       fragmentShader: 'varying vec3 vC; varying float vA;\n' +
         'void main(){ vec2 c = gl_PointCoord - 0.5; float r = dot(c,c); if (r > 0.25) discard; vec3 o = vC * vA * (1.0 - smoothstep(0.06, 0.25, r)); gl_FragColor = vec4(o, max(o.r, max(o.g, o.b))); }'
@@ -317,8 +301,8 @@
       uniforms: Object.assign({ uColor: { value: new THREE.Vector3().fromArray(CONFIG.contour) }, uA: { value: CONFIG.contourAlpha }, uAI: { value: CONFIG.indexContourAlpha } }, uniforms),
       transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor,
       vertexShader: GLSL_COMMON + '\nattribute float idx; varying float vA;\nuniform float uA; uniform float uAI;\n' +
-        'void main(){ vec3 p = position; p.y += field(p); vec4 mv = modelViewMatrix * vec4(p,1.0);\n' +
-        ' vA = mix(uA, uAI, idx) * depthFade(-mv.z) * edgeFade(p) * (1.0 + glow(p)*3.2); gl_Position = projectionMatrix * mv; }',
+        'void main(){ vec3 p = position; p.y += breathe(p); vec4 mv = modelViewMatrix * vec4(p,1.0);\n' +
+        ' vA = mix(uA, uAI, idx) * depthFade(-mv.z) * edgeFade(p); gl_Position = projectionMatrix * mv; }',
       fragmentShader: 'uniform vec3 uColor; varying float vA; void main(){ vec3 o = uColor * vA; gl_FragColor = vec4(o, max(o.r, max(o.g, o.b))); }'
     });
     scene.add(new THREE.LineSegments(cGeo, cMat));
@@ -354,7 +338,7 @@
       'varying vec3 vC; varying float vA; varying float vP;\n';
     scene.add(new THREE.LineSegments(lineGeo, new THREE.ShaderMaterial({
       uniforms: cabUni, transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor,
-      vertexShader: cableVS + 'void main(){ vec3 p = position; p.y += field(p); vec4 mv = modelViewMatrix * vec4(p,1.0);\n' +
+      vertexShader: cableVS + 'void main(){ vec3 p = position; p.y += breathe(p); vec4 mv = modelViewMatrix * vec4(p,1.0);\n' +
         ' vP = pulse(s, uTail); float lv = 1.0 - lvl*0.17; vC = mix(uFiber, uSignal, clamp(vP,0.0,1.0));\n' +
         ' vA = (uCable*lv + vP*0.9) * depthFade(-mv.z) * edgeFade(p); gl_Position = projectionMatrix * mv; }',
       fragmentShader: 'varying vec3 vC; varying float vA; varying float vP; void main(){ vec3 o = vC * vA; gl_FragColor = vec4(o, max(o.r, max(o.g, o.b))); }'
@@ -366,7 +350,7 @@
     cGeo2.setAttribute('lvl', new THREE.BufferAttribute(new Float32Array(cl), 1));
     scene.add(new THREE.Points(cGeo2, new THREE.ShaderMaterial({
       uniforms: cabUni, transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor,
-      vertexShader: cableVS + 'void main(){ vec3 p = position; p.y += field(p); vec4 mv = modelViewMatrix * vec4(p,1.0); float d = -mv.z;\n' +
+      vertexShader: cableVS + 'void main(){ vec3 p = position; p.y += breathe(p); vec4 mv = modelViewMatrix * vec4(p,1.0); float d = -mv.z;\n' +
         ' vP = pulse(s, uTail); float lv = 1.0 - lvl*0.2; vC = mix(uFiber, uSignal, clamp(vP*1.2,0.0,1.0));\n' +
         ' vA = (0.55*lv + vP*1.2) * depthFade(d) * edgeFade(p);\n' +
         ' gl_PointSize = clamp((2.3*lv + vP*3.6) * uPR * (170.0/d), 1.2*uPR, 7.0*uPR); gl_Position = projectionMatrix * mv; }',
@@ -383,7 +367,7 @@
     scene.add(new THREE.Points(nGeo, new THREE.ShaderMaterial({
       uniforms: cabUni, transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor,
       vertexShader: GLSL_COMMON + '\nattribute float s; attribute float kind; varying float vP; varying float vK; varying float vA;\n' +
-        'void main(){ vec3 p = position; p.y += field(p); vec4 mv = modelViewMatrix * vec4(p,1.0); float d = -mv.z;\n' +
+        'void main(){ vec3 p = position; p.y += breathe(p); vec4 mv = modelViewMatrix * vec4(p,1.0); float d = -mv.z;\n' +
         ' vP = pulse(s, 22.0); vK = kind; vA = depthFade(d) * edgeFade(p);\n' +
         ' float base = kind > 2.5 ? 26.0 : (kind > 1.5 ? 17.0 : 8.0);\n' +
         ' gl_PointSize = clamp(base * (1.0 + vP*0.35) * uPR * (150.0/d), 3.0*uPR, 30.0*uPR); gl_Position = projectionMatrix * mv; }',
@@ -431,7 +415,6 @@
       if (!w || !h) return;
       uniforms.uTime.value = t;
       place(t);
-      updateHover();
       renderer.render(scene, camera);
       state.frames++;
     };
@@ -442,43 +425,6 @@
       pointer.ty = Math.max(-0.5, Math.min(0.5, e.clientY / window.innerHeight - 0.5));
     }, { passive: true });
     document.documentElement.addEventListener('pointerleave', function () { pointer.tx = 0; pointer.ty = 0; });
-
-    /* cursor → point on the terrain (ray march against the height model) */
-    var hover = { ndc: new THREE.Vector2(), active: false, has: false, x: 0, z: 0, k: 0 };
-    var ray = new THREE.Raycaster(), hit = new THREE.Vector3();
-    var pick = function () {
-      ray.setFromCamera(hover.ndc, camera);
-      var o = ray.ray.origin, d = ray.ray.direction, t0 = 0, step = 6;
-      for (var i = 0; i < 120; i++) {
-        var t1 = t0 + step;
-        hit.copy(d).multiplyScalar(t1).add(o);
-        if (hit.y <= height(hit.x, hit.z)) {
-          var lo = t0, hi = t1;                          // refine between the two samples
-          for (var b = 0; b < 8; b++) { var m = (lo + hi) / 2; hit.copy(d).multiplyScalar(m).add(o); if (hit.y <= height(hit.x, hit.z)) hi = m; else lo = m; }
-          return Math.abs(hit.x) < SIZE / 2 && Math.abs(hit.z) < SIZE / 2;
-        }
-        t0 = t1;
-      }
-      return false;
-    };
-    var updateHover = function () {
-      var on = hover.active && pick();
-      if (on) {
-        if (!hover.has) { hover.x = hit.x; hover.z = hit.z; hover.has = true; }
-        hover.x += (hit.x - hover.x) * CONFIG.hoverFollow;
-        hover.z += (hit.z - hover.z) * CONFIG.hoverFollow;
-      }
-      hover.k += ((on ? 1 : 0) - hover.k) * 0.06;
-      uniforms.uMouse.value.set(hover.x, hover.z);
-      uniforms.uHover.value = hover.k;
-    };
-    hero.addEventListener('pointermove', function (e) {
-      if (e.pointerType === 'touch') return;
-      var r = canvas.getBoundingClientRect();
-      hover.ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
-      hover.active = true;
-    }, { passive: true });
-    hero.addEventListener('pointerleave', function () { hover.active = false; }, { passive: true });
 
     /* loop with visibility pausing and adaptive quality */
     var running = false, raf = 0, clock = 0, prev = 0, visible = true, samples = [], degraded = false;
